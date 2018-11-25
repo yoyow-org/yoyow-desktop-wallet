@@ -1,0 +1,65 @@
+@import "define";
+
+//弹出窗口
+.popup-window {
+  font-size: $fontSize;
+  color: $blackColor;
+  font-weight: bold;
+  .title {
+    font-size: $titleFontSize;
+    width: 100%;
+    margin-top: 20px;
+    border-bottom: solid 1px $grayColor;
+    height: 46px;
+  }
+  .body {
+    .input-row {
+      padding: 10px 0 10px 0;
+      height: 50px;
+      line-height: 40px;
+      display: flex;
+      > .label {
+        font-size: $middleSize;
+      }
+      > .input {
+        flex: 3;
+        border: none;
+        border-bottom: solid 2px $grayColor;
+        text-align: right;
+        padding: 0;
+      }
+    }
+    .list {
+      > :nth-child(even) {
+        background-color: $bgGrayColor;
+      }
+      .row {
+        height: 40px;
+        line-height: 40px;
+        display: flex;
+        > :nth-child(1) {
+          //flex: 1;
+        }
+        > :nth-child(2) {
+          flex: 1;
+          text-align: right;
+          color: $greenColor;
+        }
+      }
+    }
+  }
+  .buttons {
+    padding: 8px 20px 10px 20px;
+    text-align: right;
+  }
+  .message-box{
+    font-size: $middleSize;
+    color: $defaultTextColor;
+    margin: 16px 0;
+    word-wrap: break-word;
+  }
+  .error-box{
+    @extend .message-box;
+    color: $regColor;
+  }
+}

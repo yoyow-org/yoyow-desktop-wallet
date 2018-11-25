@@ -1,0 +1,62 @@
+@import "define";
+// 主体内容表格
+.content-table{
+  width: 100%;
+  margin-top: 22px;
+  border-left: 1px solid $defaultBorderColor;
+  border-top: 1px solid $defaultBorderColor;
+  border-right: 1px solid $defaultBorderColor;
+  tbody{
+    tr{
+      &:hover{
+        background: #dfefff;
+      }
+    }
+  }
+  th{
+    text-align: left;
+    font-weight: normal;
+    color: #6c8a9c;
+  }
+  th,td{
+    height: 48px;
+    padding: 0 10px 0 10px;
+    border-bottom: 1px solid $defaultBorderColor;
+  }
+  td{
+    font-size: 14px;
+  }
+  .blue-font{
+    color: #6c8a9c;
+  }
+  .span-inline{
+    display:inline-block;
+    width: 100%;
+  }
+  .no-right-bd{
+    border-right: none;
+  }
+  // 操作列
+  .controll-cell{
+    display: flex;
+    flex-flow: row;
+    padding: 0;
+  }
+  // 操作列 文字按钮
+  .font-btn{
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 14px;
+  }
+  // 居中单元格文本
+  .td-text-center{
+    text-align: center;
+  }
+  .symbol-text{
+    display: inline-block;
+    width: 16px;
+    text-align: center;
+  }
+}

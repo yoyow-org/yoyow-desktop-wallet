@@ -1,0 +1,9 @@
+require("./styles/app.scss");
+require("file-loader?name=favicon.ico!./favicon.ico");
+require("babel-polyfill");
+require("whatwg-fetch");
+require("indexeddbshim");
+require("./locales/locales.js");
+require("./language/langimg");
+//require("./img/img.js");
+//require("file-loader?name=index.html!./index.html");

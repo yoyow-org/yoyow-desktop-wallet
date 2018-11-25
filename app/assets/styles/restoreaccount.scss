@@ -1,0 +1,17 @@
+@import "define";
+.tit-restore{
+  font-size: $fontSize;
+  font-weight: normal;
+}
+.layer-restore{
+  padding-top: 20px;
+  span{
+    display: inline-block;
+    width: 150px;
+  }
+  input[type=button]{
+    height: 40px;
+    line-height: 40px;
+    margin-top: 45px;
+  }
+}

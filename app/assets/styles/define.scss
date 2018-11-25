@@ -1,0 +1,126 @@
+//定义主色调
+$logoColor: #3d4f60 !default;
+$pageBgColor:#4c5e70 !default;
+$greenColor: #36c6d3 !default;
+$blueColor: #05a6b5 !default;
+$warningColor:#F90 !default;
+$whiteColor: #ffffff !default;
+$blackColor: #666666 !default;
+$darkColor: #000 !default;
+$globalBgColor: #F5F5F5 !default;
+$placeholder: #b2b2b2 !default;
+$grayColor: #808080 !default;
+$bgGrayColor: #dddddd !default;
+$headerFooterSelectColor: #e4ecf6 !default;
+$selectListBorder: #c2cad8 !default;
+$headerAccountSelectHover: #bcd4f1 !default;
+$leftColor: #4c5e70 !default;
+$menuBorderColor: #58697b !default;
+$regColor: #d91a27 !default;
+$hrColor: #e6e6e6 !default;
+$defaultTextColor: #4c4c4c !default;
+$defaultBorderColor: #E5E5E5 !default;
+//定义字体大小
+$bigFontSize:48px;
+$icoFontSize: 30px;
+$titleBiggerFontSize: 24px;
+$titleFontSize: 20px;
+$butonFontSize:18px;
+$fontSize: 16px;
+$middleSize: 14px;
+$smallFontSize: 12px;
+
+//定义常用布局
+@mixin flexBox {
+  display: -moz-box;
+  display: -webkit-box;
+  display: box;
+}
+
+@mixin flexBoxAlignCenter {
+  -moz-box-align: center;
+  -webkit-box-align: center;
+  box-align: center;
+}
+
+@mixin flexBoxPackCenter {
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+  box-pack: center;
+}
+
+@mixin flexBoxAlignBaseline {
+  -moz-box-align: baseline;
+  -webkit-box-align: baseline;
+  box-align: baseline;
+}
+
+@mixin flexBoxHorizontal {
+  display: -moz-box;
+  display: -webkit-box;
+  display: box;
+  -moz-box-orient: horizontal;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+}
+
+@mixin flexBoxVertical {
+  display: -moz-box;
+  display: -webkit-box;
+  display: box;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+}
+
+$contentWidth: 1100px;
+$menuWidth: 255px;
+
+//按钮
+@mixin button($width:100px,$background:#36c6d3) {
+  width: $width;
+  height: 30px;
+  line-height: 30px;
+  font-size: $middleSize;
+  border: none;
+  color: $whiteColor;
+  text-align: center;
+  cursor: pointer;
+  background: $background;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+    background-color: #05a6b5;
+  }
+  &:disabled {
+    background-color: $bgGrayColor;
+  }
+}
+
+//输入框
+@mixin input_text($width:150px,$background:#FFF) {
+  width: $width;
+  height: 34px;
+  border: 1px #E5E5E5 solid;
+  padding: 0 10px;
+  line-height: 34px;
+  background: $background;
+  &:focus {
+    border: 1px #36c6d3 solid;
+  }
+}
+
+//下拉框
+@mixin select() {
+
+  height: 34px;
+
+}
+
+//定义图标字体
+@font-face {
+  font-family: 'WebSymbols-Regular';
+  src: url('../fonts/WebSymbols-Regular.otf');
+}
+
+$basefamily: \5FAE\8F6F\96C5\9ED1;

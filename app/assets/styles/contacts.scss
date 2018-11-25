@@ -1,0 +1,35 @@
+@import "define";
+// 编辑行
+.edit-line{
+  width: 600px;
+  padding-left: 16px;
+  margin-top: 18px;
+  font-weight: normal;
+  position: relative;
+  // 与文本对其的accountImage
+  .account-image{
+    float: right;
+    margin-right: 16px;
+  }
+  .edit-text-label{
+    display: inline-block;
+    width: 48px;
+    font-weight: normal;
+  }
+}
+
+.float-right{
+  float: right;
+}
+
+.float-left{
+  float: left;
+}
+
+.green-font{
+  color: $greenColor;
+}
+
+.h-34{
+  height: 34px;
+}

@@ -1,0 +1,589 @@
+{
+  "languages": {
+    "zh": "简体中文",
+    "en": "English"
+  },
+  "button": {
+    "ok": "确定",
+    "cancel": "取消",
+    "reset": "重置"
+  },
+  "error": {
+    "unknown_error": "未知错误",
+    "apis_error": "APIS 异常",
+    "get_fees_error": "获取操作费率错误",
+    "error_account":"您的当前账号因被重置而失效，您可以使用最新的备份文件来恢复账号！",
+    "error_account_memo":"您的当前账号因被重置过，无法查看重置前的备注"
+  },
+  "dialog": {
+    "info_title": "温馨提示",
+    "error_title": "操作失败",
+    "memo_title": "查看备注"
+  },
+  "password": {
+    "wrong_length": "密码不少于12位字符，可由英文、数字、标点符号组成",
+    "wrong_confirm": "两次输入的密码不一致",
+    "ph_enter_new_pwd": "请输入新密码",
+    "ph_enter_new_pwd_confirm": "确认新密码"
+  },
+  "footer": {
+    "notice_connected": "网络已经连接",
+    "notice_disconnected": "网络已经断开",
+    "connected": "已连接",
+    "disconnected": "未连接",
+    "head_block": "最新区块："
+  },
+  "create_account": {
+    "title_register": "注册",
+    "title_register_with_auth": "注册并授权",
+    "ph_pwd": "请输入账号密码",
+    "ph_pwd_confirm": "请确认账号密码",
+    "note": "注意：",
+    "note_msg": "请牢记您的密码，YOYOW不存储您的密码，也不提供找回的功能",
+    "create": "创建账号",
+    "create_with_auth": "创建账号并授权",
+    "import_file": "恢复账号",
+    "restore_key": "重置账号",
+    "register_success": " 恭喜您，注册成功！",
+    "yoyow_id": "YOYOW号:",
+    "account_key": "账号私钥:",
+    "prompt_p1": "账号私钥拥有最高权限，可用于账号找回和密码重置",
+    "prompt_p2": "账号私钥不会存储在本地钱包或浏览器,丢失后无法找回,请务必仔细保管!",
+    "backed_up": " 我已备份好账号私钥",
+    "complete": "完  成",
+    "complete_with_jump": "完成并跳转"
+  },
+  "import_file": {
+    "password": "密码：",
+    "notice_pwd_error": "密码不正确",
+    "title": "恢复账号",
+    "prompt": "请在对话框中选择备份文件，备份文件不会上传远端服务器，只在本地浏览器中进行处理。",
+    "select_file": "选择文件",
+    "file_size": "文件大小:",
+    "file_hash": "文件SHA1:"
+  },
+  "restore_account": {
+    "title": "重置账号",
+    "restore_key_with_auth":"私钥恢复并授权",
+    "import_file_with_auth":"导入账号并授权",
+    "complete_and_back":"恢复账号并授权",
+    "error_key_invalid": "账号私钥无效",
+    "new_pwd": "新&nbsp;密&nbsp;码",
+    "confirm_pwd": "重复密码",
+    "account_key": "账号私钥",
+    "ph_enter_key": "请输入你备份的账号私钥",
+    "restore_ok": " 账号恢复成功",
+    "prompt_p1": "请务必保存好您的账号私钥！通过私钥可重置密码！",
+    "prompt_p2": "YOYOW并不会保存您的私钥；浏览器也不会保存您的私钥",
+    "prompt_p3": "强烈建议通过手抄或者其他密码管理软件备份私钥。丢失后无法找回"
+  },
+  "erc20": {
+    "title": "网关",
+    "note": "支持将以太钱包的YOYOW代币自动兑换至主网钱包。点击“生成地址”按钮，系统会自动为您的主网账号分配一个ETH地址。将以太钱包中的YOYOW代币转入该地址，YOYOW主网账号即可自动获得等额YOYO币。",
+    "current_account": "当前账号：",
+    "bind_eth": "绑定ETH地址：",
+    "btn_generate": "点击生成",
+    "transfer_out_note": "网关自动充提，到账时间视以太网络确认速度而定。",
+    "transfer_out_to": "转出至：",
+    "placeholder_out_address": "请输入ETH地址",
+    "transfer_out_amount": "转出数量：",
+    "placeholder_out_amount": "请输入转出%(unit)s数量",
+    "useable": "可用：",
+    "fees": "网络手续费：",
+    "confirm_note": "网络手续费将从转账金额中扣除，请确保转账数额大于%(amount)s。",
+    "confirm_btn": "提交转出",
+    "transfer_in_title": "转入(ERC20)",
+    "transfer_out_title": "转出(ERC20)",
+    "alert_input_address": "请输入ETH地址",
+    "alert_input_amount": "请输入转出数量",
+    "alert_valid_amount": "转出数量必须大于%(amount)s %(unit)s",
+    "error_address": "无效的ETH地址",
+    "error_balance": "余额不足以支付整个操作费用",
+    "error_master": "网关账户异常",
+    "success_info": "提交转出成功",
+    "qrcode": "ETH 地址"
+  },
+  "bts": {
+    "title": "网关",
+    "note_info": "操作方式：",
+    "note": "将 BTS 内盘的 YOYO 转账至 yoyow.gateway（数字 ID#402807）转账 memo 备注填：“yoyow#主网账号”（双引号不需要填写），即可完成主网 YOYO 自动发放，第一次建议小额转账先试一下。如下图：",
+    "transfer_out_note": "网关自动充提，到账时间视BTS确认速度而定，约在1分钟之内。",
+    "transfer_out_to": "转出至：",
+    "placeholder_out_address": "请输入BTS账号",
+    "transfer_out_amount": "转出数量：",
+    "placeholder_out_amount": "请输入转出%(unit)s数量",
+    "useable": "可用：",
+    "fees": "网络手续费：",
+    "confirm_note": "网络手续费将从转账金额中扣除，请确保转账数额大于%(amount)s。",
+    "confirm_btn": "提交转出",
+    "transfer_in_title": "转入(BTS代币)",
+    "transfer_out_title": "转出(BTS代币)",
+    "alert_input_address": "请输入BTS账号",
+    "alert_input_amount": "请输入转出数量",
+    "alert_valid_amount": "转出数量必须大于%(amount)s %(unit)s",
+    "error_balance": "余额不足以支付整个操作费用",
+    "error_master": "网关账户异常",
+    "success_info": "提交转出成功",
+    "unknown_error": "未知错误",
+    "qrcode": "ETH 地址"
+  },
+  "left_menu": {
+    "assets": "Token",
+    "transfer": "转账",
+    "erc20": "网关",
+    "contacts": "联系人",
+    "recent_activity": "近期活动",
+    "help": "帮助",
+    "settings": "设置",
+    "account": "账号",
+    "change_password": "修改密码",
+    "backup": "备份",
+    "restore_import": "恢复与重置",
+    "access_point": "接入点",
+    "vote": "投票",
+    "gen_qrcode": "账号二维码"
+  },
+  "balance": {
+    "assets_title": "我的Token",
+    "assets_type": "Token类型",
+    "assets_amounts": "数量",
+    "assets_operation": "操作",
+    "balance": "YOYO余额",
+    "prepaid": "YOYO零钱",
+    "erc20": "网关",
+    "create_token": "Token发行",
+    "transfer": "转账",
+    "transfer_to_balance": "转至余额",
+    "transfer_to_prepaid": "转至零钱",
+    "click_collect": "点击领取",
+    "day": "天",
+    "csaf_title": "积分",
+    "csaf_current_limit": "当前积分/积分上限",
+    "csaf_gather": "积分积累",
+    "csaf_collect": "可领取积分",
+    "alert_balance_not_enough": "余额不足",
+    "alert_prepaid_not_enough": "零钱不足",
+    "alert_empty_csaf": "无可领取的积分",
+    "memo_to_balance": "零钱转至余额",
+    "memo_to_prepaid": "余额转至零钱",
+    "success": "成功",
+    "failure": "失败",
+    "alert_invalid_amount": "请输入有效金额",
+    "alert_balance_cant_pay": "余额不足以支付当前操作费用",
+    "alert_prepaid_cant_pay": "零钱不足以支付当前操作费用",
+    "transfer_amount": "转账金额",
+    "placeholder_transfer_amount": "请输入转账金额",
+    "csaf_collect_title": "积分领取",
+    "alert_csaf_invalid_uid": "无效的领取账号",
+    "alert_casf_invalid_amount": "领取的积分量必须大于0",
+    "alert_csaf_balance_cant_pay": "余额不足以支付当前操作的手续费",
+    "alert_casf_prepaid_cant_pay": "零钱不足以支付当前操作的手续费",
+    "alert_csaf_choose_account": "请选择要领取的账号",
+    "notify_csaf_success": "积分领取成功",
+    "alert_csaf_over_limit": "超过积分上限",
+    "alert_csaf_not_enough": "可领取的积分不足",
+    "error_csaf_collect": "领取积分错误",
+    "csaf_collect_to": "领取到",
+    "csaf_placeholder_input_yoyow": "请输入YOYOW账号",
+    "csaf_invalid_yoyow": "无效的账号",
+    "csaf_account_collect_limit": "该账号可领取上限",
+    "csaf_unit_text": "积分",
+    "csaf_collect_text": "领取积分",
+    "error_head_time": "操作与链上时间不匹配",
+    "pledge_title": "抵押",
+    "pledge_type": "抵押类型",
+    "pledge_price": "抵押金额",
+    "releasing_price": "待释放金额",
+    "witness_pledge": "见证人抵押",
+    "committee_member_pledge": "理事会抵押",
+    "change_pledge": "调整抵押金额",
+    "current_pledge_price": "当前抵押金额",
+    "max_pledge_price": "最高抵押金额",
+    "min_pledge_price": "最低抵押金额",
+    "upadte_pledge_price": "更新抵押金额",
+    "place_holder_pledge_price": "请输入抵押金额",
+    "error_invalid_witness": "无效的见证人",
+    "error_invalid_committee": "无效的理事会成员",
+    "error_update_pledge": "调整抵押失败",
+    "alert_min_pledge": "最低抵押金额 %(amount)s %(unit)s"
+  },
+  "transfer": {
+    "title": "转账",
+    "from": "来自",
+    "to": "发往",
+    "balance": "余额",
+    "prepaid": "零钱",
+    "placeholder_account": "请输入YOYOW账号",
+    "save_contact": "保存到地址本",
+    "error_invalid_account": "无效的转账账号",
+    "amount": "金额",
+    "placeholder_amount": "请输入转账金额",
+    "usable": "可用",
+    "memo": "备注",
+    "placeholder_memo": "添加备注",
+    "success_transfer": "转账成功",
+    "alert_empty_to_account": "请输入要发往的YOYOW账号",
+    "alert_other_to_account": "转账目标不能是当前账号",
+    "alert_invalid_amount": "请输入有效金额",
+    "alert_balance_not_enough": "账户余额不足",
+    "alert_prepaid_not_enough": "账户零钱不足",
+    "alert_balance_cant_pay": "余额不足以支付当前操作费用",
+    "alert_prepaid_cant_pay": "零钱不足以支付当前操作费用"
+  },
+  "contacts": {
+    "title": "联系人",
+    "button_add": "新建联系人",
+    "placeholder_filter_account": "可输入YOYOW号、备注筛选",
+    "tab_head_account": "YOYOW号",
+    "tab_head_memo": "备注",
+    "tab_head_opration": "操作",
+    "text_empty_contacts": "没有联系人",
+    "op_transfer": "转账",
+    "op_delete": "删除",
+    "op_edit": "编辑",
+    "alert_delete_contact": "是否删除联系人",
+    "error_delete_contact": "删除联系人失败",
+    "edit_title": {
+      "add": "新增联系人",
+      "put": "修改备注"
+    },
+    "edit_text_account": "账号",
+    "edit_placeholder_account": "请输入YOYOW账号",
+    "edit_text_memo": "备注",
+    "edit_placeholder_memo": "添加备注（30字节以内）",
+    "edit_error_already_added": "该账号已加入联系人",
+    "edit_error_invalid_uid": "无效的账号",
+    "edit_alert_empty_uid": "请输入YOYOW账号",
+    "edit_alert_empty_memo": "请输入备注",
+    "edit_alert_not_self": "不能添加自己"
+  },
+  "history": {
+    "title": "近期活动",
+    "tab_head_type": "类型",
+    "tab_head_change": "资产变动",
+    "tab_head_info": "信息",
+    "tab_head_csaf": "积分",
+    "tab_head_fees": "手续费",
+    "tab_head_date": "时间",
+    "tab_head_memo": "备注",
+    "text_empty_data": "没有近期活动",
+    "text_none": "无",
+    "text_load_more": "点击加载更多",
+    "text_loading": "正在加载...",
+    "text_load_done": "全部加载完毕",
+    "text_view_memo": "查看备注",
+    "text_view": "查看",
+    "type_all": "全部",
+    "type_in": "转入",
+    "type_out": "转出",
+    "type_csaf": "积分",
+    "type_token": "资产",
+    "text_to": "到",
+    "op_type": {
+      "1": "转入",
+      "2": "转出",
+      "3": "领取积分",
+      "4": "创建资产"
+    },
+    "op_change": {
+      "balance": "余额",
+      "prepaid": "零钱"
+    },
+    "op_fees": {
+      "balance": "余额抵扣",
+      "prepaid": "零钱抵扣",
+      "csaf": "积分抵扣",
+      "none": "无"
+    },
+    "op_transfer": {
+      "collect_csaf": "领取 %(amount)s 积分",
+      "outer_transfer": "发送 %(amount)s",
+      "inner_transfer_from_balance": "将 %(amount)s 从余额转至零钱",
+      "inner_transfer_from_prepaid": "将 %(amount)s 从零钱转至余额",
+      "create_token": "创建资产 %(token)s"
+    }
+  },
+  "unlockWallet": {
+    "title": {
+      "active": "解锁账号",
+      "second": "解锁零钱"
+    },
+    "text": {
+      "active": "账号密码",
+      "second": "零钱密码"
+    },
+    "placeholder_text": {
+      "active": "请输入账号密码",
+      "second": "请输入零钱密码"
+    },
+    "error_text": {
+      "active": "账号密码错误",
+      "second": "零钱密码错误"
+    }
+  },
+  "layout_fees": {
+    "title": "手续费",
+    "text": "使用 %(count)s 积分抵扣"
+  },
+  "account": {
+    "title": "账号",
+    "current_account": "当前账号",
+    "view_permission": "查看权限"
+  },
+  "view_purview": {
+    "title": "权限概览",
+    "public_key": "公钥",
+    "private_key": "私钥",
+    "button_ok": "提交",
+    "button_cancel": "取消",
+    "button_view_private_key": "显示私钥",
+    "button_view_public_key": "显示公钥",
+    "button_generate_QR": "点击生产二维码",
+    "generate_QR_title": "请输入6位数字密码",
+    "generate_QR_info": "用于保护您的私钥,扫私钥二维码时，需提供该6位数字方可正确解码",
+    "pwd_tips_Num_only": "密码只能是数字",
+    "pwd_tips_length_only": "密码只能为6位",
+    "pwd_placeholder": "请输入密码",
+    "master_key": {
+      "title": "主控密钥",
+      "info": "Owner key,仅能管理本账户其他权限",
+      "public_key": "公钥"
+    },
+    "capital_key": {
+      "title": "资金密钥",
+      "info": "Active key,可控制转账、管理零钱权限"
+    },
+    "secondary_key": {
+      "title": "零钱密钥",
+      "info": "Secondary key,拥有媒体平台操作权限与零钱权限"
+    },
+    "memo_key": {
+      "title": "备注密钥",
+      "info": "Memo key ,可以查看转账备注信息"
+    }
+  },
+  "change_pass_word": {
+    "title": "修改密码",
+    "tab_name": {
+      "account_pwd": "账号密码",
+      "wallet_pwd": "零钱密码"
+    },
+    "container": {
+      "new_pwd": {
+        "name": "新密码",
+        "pwd_placeholder": "请输入新密码"
+      },
+      "check_pwd": {
+        "name": "确认新密码",
+        "check_pwd_placeholder": "确认新密码"
+      },
+      "account_pwd": {
+        "title": "修改当前账号的密码",
+        "current_account_pwd": {
+          "name": "当前账号密码",
+          "placeholder_value": "请输入您当前账号密码"
+        }
+      },
+      "wallet_pwd": {
+        "title": "零钱转账需要输入零钱密码，默认是账号密码。设置独立的零钱密码可以减少账户密码泄露的风险",
+        "current_wallet_pwd": {
+          "name": "当前零钱密码",
+          "placeholder_value": "请输入您当前零钱密码"
+        }
+      }
+    },
+    "forget": "忘记密码",
+    "tips": {
+      "title": "温馨提示",
+      "content": "账号密码无法找回，只能通过私钥重建账号，重新设置密码",
+      "error_message_new": "密码不少于12位字符，可由英文、数字、标点符号组成",
+      "error_message_bool": "两次输入的密码不一致",
+      "error_message_wrong": "密码错误,请重新输入",
+      "success": "修改密码成功"
+    }
+  },
+  "on_api_change_components": {
+    "title": "接入点",
+    "title_info": "修改API服务器",
+    "label_name": "API服务器"
+  },
+  "backup_account": {
+    "title": "备份",
+    "button": "创建账号备份",
+    "tips_content": "点击按钮将生成一个后缀名为 .bin 的备份文件，这个备份文件使用你的账号密码进行加密。通过它可以恢复账号，或者在不同浏览器或者计算机间进行账号迁移。备份文件不包含账号最高权限私钥",
+    "label_name": "上次备份时间",
+    "not_backup": "未备份",
+    "time": true
+  },
+  "import_account": {
+    "title": "恢复与重置",
+    "account_backup": {
+      "label": "选择账号备份文件，恢复账号",
+      "button_value": "恢复账号"
+    },
+    "private_key_backup": {
+      "label_1": "输入账号私钥，重置账号。重置账号后原备份文件将失效，并且其他客户端（PC端钱包或APP钱包）的该账号也将失效，",
+      "label_2": "请谨慎操作！",
+      "label_3": "如果其他客户端的该账号失效，可在这里创建最新的备份文件来恢复该账号",
+      "button_value": "重置账号"
+    }
+  },
+  "init_error": {
+    "title": "无法与API服务器同步连接",
+    "tips_time": "请确认你的计算机系统时钟正确",
+    "tips_API": "同步你的计算机时钟后，请刷新本页面。如果你的时钟正确，那你连接的API服务器可能与区块链数据不同步，这种情况下，可尝试使用其他API服务器进行连接。",
+    "API_setting": {
+      "title": "API服务器设定",
+      "label_API": "API服务器",
+      "button_change_API": "切换API服务器",
+      "button_back_home": "回到主页"
+    },
+    "API_state": {
+      "connecting": "已连接",
+      "disconnected": "未连接"
+    }
+  },
+  "authorize_service": {
+    "title": "授权登录",
+    "platform": "平台：",
+    "yoyow_id": "YOYOW号：",
+    "note_msg": "你将授权登录到[%(platform)s]平台",
+    "auth": "授权并登录",
+    "invalid": "无效平台",
+    "invalid_sign": "无效签名",
+    "expired": "请求已经过期",
+    "invalid_state": "平台状态地址无效",
+    "invalid_key": "无效的active密钥",
+    "insufficient": "余额或积分不足",
+    "invalid_account": "账号不存在"
+  },
+  "Vote": {
+    "title_vote": "投票",
+    "link_to_proxy": "设置投票代理人",
+    "to_proxy": "您委托%(value)s 作为你的投票代理人，其将代你投票。",
+    "Remaining": "剩余%(value)s 天",
+    "last_vote_day": "上次投票时间",
+    "expire_day": "到期时间",
+    "erroMsg_black": "您已被设为黑名单，不能设置投票代理！",
+    "erroMsg_qualifications": "您不具备投票资格，不能设置投票代理！",
+    "erroMsg_balance_proxy": "您的YOYO余额小于 %(value)s，不能设置投票代理！",
+    "erroMsg_balance_vote": "您的YOYO余额小于 %(value)s，不能投票！",
+    "erroMsg_notEnoughBalance":"扣除手续费后，你的余额小于%(value)s,，您的YOYO余额不足！",
+    "erroMsg_balance_maxvVote": "最多只能投票给%(value)s位见证人！",
+    "erroMsg_target_uid": "您输入的用户不存在，请输入正确的YOYOW号！",
+    "erroMsg_target_uid_null": "请输入用户的YOYOW号！",
+    "erroMsg_target_uid_qualifications": "您输入的用户不具备投票资格，请重新输入！",
+    "active_vote":"您激活代理资格后你可以作为其他YOYOW用户的投票代理人，确认激活吗？",
+    "ref_proxy":"您可以刷新代理资格有效期，以便延长过期时间，确认刷新吗？",
+    "ref_vote":"您可以刷新投票有效期，以便延长过期时间，确认刷新吗？",
+    "label_password":"密码",
+    "error_passord":"密码错误",
+    "integral":"积分",
+    "button_val_confirm":"确认",
+    "button_val_cancel":"取消",
+    "button_val_active":"激活代理资格",
+    "button_val_ref":"刷新有效期",
+    "title_active":"激活代理资格",
+    "title_ref":"刷新有效期",
+    "title_confirmVote":"确认投票",
+    "title_EditVote":"修改投票",
+    "vote_ctr": {
+      "votes_w_info": "本次共投%(value)s票，请在以下列表查看详情情况",
+      "title_vote_witness": "见证人",
+      "input_placeholder_list_witness": "可输入见证人yoyow号筛选",
+      "ranking": "排名",
+      "uid_yoyow": "YOYOW号",
+      "votes": "得票数",
+      "ctr": "投票",
+      "fee_label": "手续费",
+      "fee": "使用 %(value)s 积分抵扣",
+      "value_button": "确认投票",
+      "vote_success": "投票成功",
+      "vote_error": "投票失败",
+      "title_vote_committee": "理事会",
+      "votes_c_info": "本次投票选举的候选人为%(value)s",
+      "input_placeholder_list_committee": "可输入理事会yoyow号筛选",
+      "confirmVoteForNumber": "您确认为%(value)s位见证人投票吗？",
+      "confirmCancelForNumber": "您确认取消%(value)s位见证人的投票吗？",
+      "confirmVote": "您确认投票给候选人%(value)s吗？",
+      "confirmCancel": "您确认取消%(value)s的候选人投票吗？",
+      "confirmSelectMinVote":"您的投票没有作任何更改，请重新选择!",
+      "live_success":"恭喜您，已成功激活代理资格！代理资格有效期为%(value)s天，将在%(day)s过期，投票可刷新此有效期",
+      "ref_success":"恭喜您，已成功刷新有效期！代理资格/投票有效期为%(value)s天，将在%(day)s过期",
+      "bugTips":"5位账号是系统账号，暂不提供5位账号与9位账号同时选择投票的功能",
+      "vote_day":"投票时间",
+      "validity":"剩余有效期",
+      "vote_number":"上次共投",
+      "day":"天",
+      "numbers":"票",
+      "vote_tips":"您可以刷新有效期或修改投票",
+      "last_vote": "上次投票候选人",
+      "active_time":"激活时间",
+      "confirmCancelAll": "您确认取消对所有见证人的投票吗？"
+    },
+    "proxy_ctr": {
+      "title_proxy": "设置投票代理人",
+      "link_top_vote": "去投票",
+      "value_button_change": "修改代理人",
+      "value_button_set": "设置代理人",
+      "value_button_remove": "移除代理人",
+      "fee_label_proxy": "手续费",
+      "fee_proxy": "使用 %(value)s 积分抵扣",
+      "proxy_success_add": "您已成功设置%(value)s用户为您的投票代理人！",
+      "proxy_success_remove": "您已移除您的投票代理人",
+      "proxy_error_repeat": "您设置的代理人超过了系统层数限制，请重新输入！",
+      "proxy_error_remove": "移除代理人失败",
+      "proxy_error_set": "设置代理人失败",
+      "erroMsg_target_uid_self": "不能设置自己为代理人，请重新输入！",
+      "erroMsg_proxy_is_trustee": "不能设置您的委托人为代理人，请重新输入！",
+      "erromsg_notEnough_fees":"设置代理需手续费%(value)s，您的YOYO余额不足！",
+      "confirm_proxy":"您有投票正在进行，设置代理人后，您的投票将失效，您确认设置投票代理人吗？",
+      "confirm_remove_proxy":"移除代理人后，%(value)s将失去代你投票的权利，确认移除吗？"
+    }
+  },
+  "Apisettings":{
+    "Api_setting_title":"设置API服务器",
+    "button_val_del":"删除",
+    "button_val_add":"添加",
+    "button_val_edit":"添加/删除",
+    "errorMsg":"API服务器地址格式错误",
+    "button_auto":"自动选择"
+  },
+  "BroCheck":{
+    "tips":"温馨提示",
+    "tips_info":"您使用的浏览器非谷歌浏览器，为了您的信息安全及更好的用户体验，我们建议您使用谷歌浏览器。",
+    "download_addr_text":"下载地址",
+    "val_button":"知道了"
+  },
+  "QRCode": {
+    "text_title": "账号二维码",
+    "button_gen": "生成账号二维码",
+    "error_invalid": "当前账号失效，请用私钥重置账号后操作",
+    "error_two_pwd": "余额密码与零钱密码不一致，请修改为一致后操作"
+  },
+  "Token":{
+    "title": "Token发行",
+    "issue_button": "发行Token",
+    "tab_head_symbol": "Token代码",
+    "tab_head_max": "总供应量",
+    "tab_head_precision": "小数位数",
+    "tab_head_desc": "Token描述",
+    "edit_text_symbol": "Token代码",
+    "edit_text_max": "总供应量",
+    "edit_text_precision": "小数位数",
+    "edit_text_desc": "Token描述",
+    "edit_placeholder_symbol": "请输入Token代码",
+    "edit_placeholder_max": "请输入总供应量",
+    "edit_placeholder_desc": "请输入Token描述（100字以内）",
+    "fees": "手续费",
+    "alert_require_balance": "YOYOW余额不足！",
+    "alert_require_symbol": "请输入Token代码！",
+    "alert_min_symbol": "Token代码至少为3个字符，请重新输入！",
+    "alert_require_supply": "请输入总供给量！",
+    "alert_max_supply": "总供给量不能大于100亿，请重新输入！",
+    "alert_require_desc": "请输入Token描述！",
+    "success_text": "恭喜您，Token发行成功！Token供给量已存入您的账户",
+    "error_unique": "该Token代码已经存在",
+    "error_unknown": "创建失败"
+  }
+}

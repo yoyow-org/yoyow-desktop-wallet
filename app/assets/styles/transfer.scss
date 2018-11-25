@@ -1,0 +1,119 @@
+@import "define";
+
+.sub-title{
+  font-size: 14px;
+  padding-bottom: 15px;
+  margin-top: 22px;
+}
+
+.m-t-0{
+  margin-top: 0px!important;
+}
+
+.m-t-14{
+  margin-top: 14px;
+}
+
+.m-t-20{
+  margin-top: 20px;
+}
+
+.m-t-30{
+  margin-top: 30px;
+}
+
+.m-l-20{
+  margin-left: 20px;
+}
+
+.m-l-30{
+  margin-left: 30px;
+}
+
+.m-l-40{
+  margin-left: 40px;
+}
+
+.m-l-50{
+  margin-left: 50px;
+}
+
+.m-l-54{
+  margin-left: 54px;
+}
+
+.m-l-60{
+  margin-left: 60px;
+}
+
+.m-l-70{
+  margin-left: 70px;
+}
+
+.m-l-80{
+  margin-left: 80px;
+}
+
+.m-l-85{
+  margin-left: 85px;
+}
+
+.m-b-20{
+  margin-bottom: 20px;
+}
+
+.p-t-6{
+  padding-top: 6px;
+}
+
+.p-r-16{
+  padding-right: 16px;
+}
+
+.top-sub5{
+  top: -5px;
+}
+
+.w-82{
+  width: 82px;
+  display: inline-block;
+}
+
+.w-115{
+  width: 115px;
+  display: inline-block;
+}
+
+.normal-text{
+  font-size: 14px;
+}
+
+.money-font{
+  color: $greenColor;
+}
+
+.hover-hand{
+  cursor: pointer;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.memo-textarea{
+  width: 418px;
+  height: 100px;
+  resize: none;
+  padding: 0 10px;
+  background: #FFF;
+  line-height: 34px;
+  border: 1px solid #E5E5E5;
+  font-family: $basefamily;
+  &:focus {
+    outline: none;
+    border: 1px #36c6d3 solid;
+  }
+}
+.img-bts{
+  width: 100%;
+}

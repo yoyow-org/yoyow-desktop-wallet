@@ -1,0 +1,415 @@
+@import "define";
+.layer-settings{
+  padding: 10px 40px;
+  width: 100%;
+  float: left;
+  clear: both;
+  font-size: $middleSize;
+  h3{
+    font-size: $fontSize ;
+    border-bottom: 1px $hrColor solid;
+    line-height: 50px;
+    color: $leftColor;
+    font-weight: 600;
+    span{
+      float: right;
+      text-decoration:none;
+      color: $greenColor;
+      font-weight: normal;
+      cursor: pointer;
+    }
+    span:hover{
+      color: $logoColor;
+    }
+  }
+  .content-settings{
+    float: left;
+    clear: both;
+    width: 100%;
+    padding: 25px 0;
+    .account-name{
+      padding-right: 25px;
+      float: left;
+      line-height: 34px;
+    }
+    .content-account{
+      float: left;
+    }
+    .content-account i{
+      display: inline-block;
+      height: 34px;
+      width: 40px;
+      background: url("../img/Account-user.png") center no-repeat $defaultBorderColor;
+      float: left;
+    }
+    .content-account em{
+      display: inline-block;
+      @include input_text;
+      float: left;
+      width: 250px;
+      color: $grayColor;
+      font-size: $middleSize;
+    }
+    .button{
+      height: 34px;
+      line-height: 34px;
+      margin-left: 20px;
+    }
+  }
+  .nav-changepassword{
+    border-bottom: 1px $hrColor solid;
+    padding-top: 15px;
+    height: 57px;
+    li{
+      height: 42px;
+      float: left;
+      cursor: pointer;
+      a{
+        display: inline-block;
+        height: 42px;
+        line-height: 42px;
+        padding: 0 21px;
+        text-decoration: none;
+        color: $blackColor;
+      }
+    }
+    .cur{
+      border: 1px $hrColor solid;
+      border-top: 3px $greenColor solid;
+      border-bottom: 1px $whiteColor solid;
+      a{
+        color:$greenColor;
+        line-height: 36px;
+        height: 39px;
+      }
+    }
+  }
+  .layer-change{
+    padding-top: 30px;
+    float: left;
+    clear: both;
+    width: 100%;
+    h4{
+      border-left: 2px $greenColor solid;
+      padding-left: 10px;
+      line-height: 18px;
+      color: $blackColor;
+    }
+    .layer-input{
+      height: 34px;
+      margin-top:20px;
+      float:left;
+      clear: both;
+      label{
+        display: inline-block;
+        width: 125px;
+        height: 34px;
+        line-height: 34px;
+      }
+      input[type=password]{
+        border-left: 1px $defaultBorderColor solid;
+        &:focus{
+          border: 1px $greenColor solid;
+        }
+      }
+      .button-normal{
+        margin-left: 125px;
+        float: left;
+      }
+      .button-normal:nth-child(2){
+        margin-left: 50px;
+      }
+      span{
+        padding-left: 78px;
+        line-height: 34px;
+        color: $greenColor;
+        cursor: pointer;
+      }
+      span:hover{
+        text-decoration: underline;
+      }
+    }
+    .tips-pwd{
+      float: left;
+      clear: both;
+      color: $regColor;
+      padding-left: 125px;
+      line-height: 34px;
+    }
+    .tips-account,
+    .layer-button{
+      padding: 20px;
+      width: 100%;
+      float: left;
+      clear: both;
+      .button-normal{
+        margin-left: 20px;
+      }
+      .button-normal:nth-child(1){
+        margin-left: 10px;
+      }
+    }
+  }
+  .msg{
+    padding: 20px 0;
+  }
+  h3 ~ .button{
+    margin-top:20px;
+  }
+  p{
+    padding-top:20px;
+  }
+  .layer-import{
+    padding: 20px 0 ;
+    font-size: $middleSize;
+    .info-import{
+      padding-bottom: 30px;
+    }
+    .button-longest{
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+  .info-account{
+    font-size: $middleSize;
+    p span{
+      display: inline-block;
+      width: 90px;
+
+    }
+    p input{
+      margin-right: 20px;
+    }
+  }
+  .intru{
+    padding: 20px 0;
+  }
+  .layer-select{
+    padding: 10px 0;
+    label{
+      float: left;
+      line-height: 34px;
+      padding-right: 40px;
+    }
+    .selecter{
+      float: left;
+    }
+  }
+  .layer-purview{
+    float: left;
+    clear: both;
+    li{
+      padding:30px 0 0 0 ;
+      float: left;
+      clear: both;
+      dl{
+        width: 100%;
+        float: left;
+        clear: both;
+        dt{
+          width: 100%;
+          padding-bottom: 20px;
+          float: left;
+          clear: both;
+          h4{
+            float: left;
+            padding-right: 30px;
+          }
+          &>span{
+            float: left;
+          }
+        }
+        .QR{
+          width: 90px;
+          height: 90px;
+        }
+        dd{
+          float: left;
+          div{
+            width: 90px;
+            height: 90px;
+            float: left;
+            clear: both;
+            position: relative;
+          }
+        }
+        dd:nth-child(3){
+          padding-left: 20px;
+          span{
+            float: left;
+            clear: both;
+            line-height: 40px;
+            font-size: $middleSize;
+          }
+        }
+        dd:nth-child(4){
+          float: right;
+          input[type=button]{
+            width: 120px;
+            height: 34px;
+            line-height: 34px;
+            color: $greenColor;
+            border:1px $greenColor solid;
+            background: $whiteColor;
+            cursor: pointer;
+            margin-top: 30px;
+            &:hover{
+              background: $greenColor;
+              color: $whiteColor;
+            }
+          }
+        }
+        dd:nth-child(2){
+          span{
+            display: inline-block;
+            width: 90px;
+            height: 90px;
+            text-align: center;
+            vertical-align: middle;
+            position: absolute;
+            left: 0;
+            top:0;
+            background: $darkColor;
+            color: $whiteColor;
+            opacity: 0.9;
+            padding-top: 25px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .layer-modal{
+    h4{
+      text-align: center;
+      font-size: $fontSize;
+      font-weight: normal;
+      color: $leftColor;
+    }
+    dt{
+      text-align: center;
+      padding-top: 20px;
+      canvas{
+        margin: 0 auto;
+      }
+    }
+    dd{
+      text-align: center;
+      padding-top: 10px;
+    }
+    .encrypt{
+      h4{
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px $defaultBorderColor solid;
+        padding: 10px 0 15px 0;
+        float: left;
+        clear: both;
+      }
+      span{
+        float: left;
+        clear: both;
+        padding:10px 0;
+      }
+      div{
+        padding-top: 20px;
+        float: right;
+        input{
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
+.layer-import{
+  width: 100%;
+  float: left;
+  clear: both;
+  padding: 0 85px;
+  h2{
+    font-size: $fontSize;
+    font-weight: normal;
+    text-align: center;
+    float: left;
+    clear: both;
+    width: 100%;
+  }
+  .tips-import{
+    width: 100%;
+    display: block;
+    text-align: left;
+    font-size: $middleSize;
+    float: left;
+    clear: both;
+  }
+  .box-button{
+    width: 100%;
+    float: left;
+    clear: both;
+    margin-top: 40px;
+    position: relative;
+    input[type=text]{
+      background: $whiteColor;
+      width: 275px;
+      border: 1px $defaultBorderColor solid;
+      height: 40px;
+      line-height: 40px;
+      float: left;
+    }
+    input[type=button]{
+      float: left;
+      height: 40px;
+      width: 85px;
+      background: $bgGrayColor;
+      color: $grayColor;
+    }
+  }
+  .info-account{
+    width: 100%;
+    float: left;
+    clear: both;
+    text-align: left;
+    font-size: $smallFontSize;
+    p{
+      margin-top: 20px;
+      span{
+        display: inline-block;
+        width: 70px;
+      }
+      .input-icon-pwd-330{
+        width: 270px;
+      }
+      .button-normal{
+        margin-left:40px;
+      }
+    }
+  }
+
+}
+.accountmodal{
+  height:190px;
+}
+.loading-layer{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  .loading-mask{
+    width: 100%;
+    height: 100%;
+    background: $darkColor;
+    opacity: 0.3;
+  }
+  .text-loading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+}
+
+.account_qr_wrapper{
+  canvas{
+    margin: 40px auto;
+  }
+}

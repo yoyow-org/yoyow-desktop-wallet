@@ -1,0 +1,53 @@
+.token-container{
+
+    .edit-line{
+        input[type="text"], .selecter, .desc-text{
+            float: right;
+        }
+
+        input[type="text"], .desc-text{
+            margin-right: 20px;
+        }
+
+        .selecter .list-select{
+            margin-left: -20px;
+        }
+
+        .desc-text{
+            width: 418px;
+            resize: none;
+            background: #FFF;
+            line-height: 34px;
+            border: 1px solid #E5E5E5;
+            text-rendering: auto;
+            color: initial;
+            letter-spacing: normal;
+            word-spacing: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            padding: 0 10px;
+            font-size: 14px;
+            &:focus{
+                outline: 1px solid #36c6d3;
+            }
+        }
+    }
+
+    .fee-text-label{
+        margin-left: 5px;
+        .m-l-10{
+            margin-left: 10px;
+        }
+    }
+
+    .buttons{
+        clear: both;
+        input {
+            &:nth-child(1){
+                margin-right: 20px;
+            }
+        }
+    }
+
+}

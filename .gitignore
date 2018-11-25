@@ -1,0 +1,7 @@
+.npmrc
+.idea
+node_modules
+hash-history
+dist
+package-lock.json
+.DS_Store

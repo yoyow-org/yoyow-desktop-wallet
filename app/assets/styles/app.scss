@@ -1,0 +1,478 @@
+@import "define";
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video, input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+  font-style: normal;
+}
+
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $grayColor;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+/* rest */
+
+html, body {
+  font-size: $middleSize;
+  font-family: $basefamily;
+  background: $globalBgColor;
+  color: $defaultTextColor;
+}
+
+#content, body, html, .cover-full {
+  width: 100%;
+  height: 100%;
+}
+
+.text-loading {
+  font-family: 'WebSymbols-Regular';
+  color: $blackColor;
+}
+
+.layer-content-flex-v {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  font-style: $middleSize;
+  width: 100%;
+  height: 60px;
+  background: $logoColor;
+  display: flex;
+  justify-content: center;
+}
+
+.header > div {
+  width: $contentWidth;
+  display: flex;
+
+}
+
+.header > div .logo {
+  width: $menuWidth;
+  height: 60px;
+  background: $logoColor;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  img{
+    width: 143px;
+    height: 48px;
+  }
+}
+
+.header > div .account_ctr {
+}
+
+.header > div .account_ctr > div > input {
+  width: 40px;
+  height: 22px;
+  background: url("../img/Lock.png") no-repeat;
+  background-position: center;
+  margin-top: 18px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.header > div .account_ctr > div > input.unlock {
+  background: url("../img/unLock.png") no-repeat;
+}
+
+.select-input {
+  width: 150px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.select-input .account-image {
+  position: relative;
+  left: 10px;
+  top: 16px;
+}
+
+.select-input > div > span {
+  display: inline-block;
+  width: 150px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  background: url("../img/icon-right.png") right 10px center no-repeat;
+  cursor: pointer;
+  color: $whiteColor;
+}
+
+.select-input > div > span:hover {
+  background: url("../img/icon-right.png") right 10px center no-repeat $leftColor;
+}
+
+.select-input > div > span.open {
+  color: $whiteColor;
+  background: url("../img/icon_angle-Under.png") right 10px center no-repeat $leftColor;
+}
+
+.select-input ul {
+  position: absolute;
+  width: 120px;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px $selectListBorder solid;
+  border-bottom: none;
+  background: $whiteColor;
+  top: 63px;
+  z-index: 99;
+  box-shadow: 4px 4px 0px $bgGrayColor;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track-piece {
+    background-color: $globalBgColor;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $placeholder;
+  }
+  &::-webkit-scrollbar-thumb:vertical:hover {
+    background: #555555
+  }
+  &::-webkit-scrollbar-thumb:horizontal:hover {
+    background: #555555
+  }
+}
+
+.select-input ul li span {
+  width: 120px;
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+  border-bottom: 1px $headerFooterSelectColor solid;
+  cursor: pointer;
+  color: $grayColor;
+  display: inline-block;
+  > img {
+    vertical-align: middle;
+  }
+}
+
+.select-input ul li span:hover {
+  background: $headerFooterSelectColor;
+}
+
+/* header */
+
+.content {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.content > div {
+  width: $contentWidth;
+  display: flex;
+  height: 100%;
+  .scrollBar {
+    width: 10px;
+    background: #0099cc;
+    position: relative;
+    span {
+      display: block;
+      width: 10px;
+      height: 50px;
+      background: #000000;
+    }
+  }
+}
+
+.content > div .content-layer {
+  flex: 1;
+  margin: 25px;
+  margin-right: 0;
+  background: $whiteColor;
+  overflow-y: auto;
+  position: relative;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track-piece {
+    background-color: $globalBgColor;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $placeholder;
+  }
+  &::-webkit-scrollbar-thumb:vertical:hover {
+    background: #555555
+  }
+  &::-webkit-scrollbar-thumb:horizontal:hover {
+    background: #555555
+  }
+}
+
+// 主体内容标题块
+.content > div .content-title {
+  font-size: $titleFontSize;
+  border-bottom: 1px solid $placeholder;
+  padding-bottom: 22px;
+}
+
+/* layout for content */
+
+.menu_left {
+  width: $menuWidth;
+  background: $leftColor;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track-piece {
+    background-color: $leftColor;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $greenColor;
+  }
+  &::-webkit-scrollbar-thumb:vertical:hover {
+    background: $greenColor
+  }
+  &::-webkit-scrollbar-thumb:horizontal:hover {
+    background: #555555
+  }
+}
+
+.menu_left .info_user {
+  width: $menuWidth;
+  padding: 56px 74px;
+}
+
+.menu_left .info_user .account-image {
+  width: 104px;
+  height: 104px;
+  border: 1px $whiteColor solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu_left .info_user p {
+  color: $whiteColor;
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+}
+.menu_left > .menu_list{
+  flex: 1;
+}
+.menu_left > .menu_list > ul {
+  border-top: 1px $menuBorderColor solid;
+}
+
+.menu_left > .menu_list > ul > li {
+  line-height: 54px;
+  border-bottom: 1px $menuBorderColor solid;
+  line-height: 54px;
+}
+
+.menu_left > .menu_list > ul > li,
+.menu_left > .menu_list > ul li {
+  cursor: pointer;
+}
+
+@each $name in user, transfer, contact, activity,vote, set, gateway, help {
+  .menu_left > .menu_list > ul > li.#{$name} > a {
+    background-image: url("../img/#{$name}.png");
+  }
+}
+
+.menu_left > .menu_list > ul li a {
+  position: relative;
+  display: inline-block;
+  width: 177px;
+  color: $whiteColor;
+  text-decoration: none;
+  font-size: $fontSize;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  padding-left: 78px;
+  background-position: 30px 17px;
+}
+
+.menu_left > .menu_list > ul li a:hover {
+  background: $logoColor;
+}
+
+@each $hovername in user, transfer, contact, activity, set, vote,gateway, help {
+  .menu_left > .menu_list > ul > li.#{$hovername} > a:hover {
+    background: url("../img/#{$hovername}.png") $logoColor 30px 17px no-repeat;
+    background-size: 18px;
+  }
+}
+
+.menu_left > .menu_list > ul > li.cur > a {
+  background-color: $greenColor !important;
+}
+
+.menu_left > .menu_list > ul > li.cur > a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 17px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid $globalBgColor;
+}
+
+.menu_left > .menu_list > ul > li.parent_menu > a {
+  background: url("../img/set.png") 30px 17px no-repeat,
+  url("../img/icon_angle-right.png") 220px 24px no-repeat;
+}
+
+.menu_left > .menu_list > ul > li.parent_menu > a:hover {
+  background: url("../img/set.png") 30px 17px no-repeat,
+  url("../img/icon_angle-right.png") 220px 24px no-repeat $logoColor;
+}
+
+.menu_left > .menu_list > ul > li.set > a {
+  background: url("../img/set.png") 30px 17px no-repeat,
+  url("../img/icon_angle-right.png") 220px 24px no-repeat;
+}
+
+.menu_left > .menu_list > ul > li.set > a:hover {
+  background: url("../img/set.png") 30px 17px no-repeat,
+  url("../img/icon_angle-right.png") 220px 24px no-repeat $logoColor;
+}
+
+.menu_left > .menu_list > ul > li.open > a {
+  background: url("../img/set.png") 30px 17px no-repeat,
+  url("../img/icon_angle-Under.png") 220px 24px no-repeat;
+}
+
+.menu_left > .menu_list > ul > li.open > a:hover {
+  background: url("../img/set.png") 30px 17px no-repeat,
+  url("../img/icon_angle-Under.png") 220px 24px no-repeat $logoColor;
+}
+
+.menu_left > .menu_list > ul > li > ul {
+  padding-top: 10px;
+}
+
+.menu_left > .menu_list > ul > li > ul li {
+  line-height: 45px;
+}
+
+.menu_left > .menu_list > ul > li > ul li.cur a {
+  background: $logoColor;
+}
+
+/* menu */
+
+.qrcode > canvas {
+  margin: auto;
+}
+
+.footer {
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  background: $headerFooterSelectColor;
+  font-size: $middleSize;
+  color: $grayColor;
+  display: flex;
+  justify-content: center;
+}
+
+.footer > div {
+  width: $contentWidth;
+}
+
+.footer > div div:first-child {
+  float: left;
+}
+
+.footer > div div:last-child {
+  float: right;
+}
+
+.footer > div div:last-child span:last-child {
+  padding-left: 35px;
+  background: url("../img/tick.png") no-repeat 15px;
+}
+
+.footer > div div:last-child span:last-child.warning {
+  background: url("../img/warning.png") no-repeat 15px;
+}
+
+/* footer */
+
+//表单
+@import "form";
+//加载模态窗口样式
+@import "modal";
+//弹出窗口
+@import "popup";
+//注册页面样式
+@import "register";
+//表格
+@import "table";
+//联系人样式
+@import "contacts";
+//设置样式
+@import "settings";
+//转账样式
+@import "transfer";
+//资产样式
+@import "balance";
+//拖动条组件
+@import "seekbar";
+//恢复账号
+@import "restoreaccount";
+//初始化错误
+@import "intl-error";
+//帮助内容
+@import "help";
+//投票代理
+@import "vote";
+//Tokens
+@import "token";

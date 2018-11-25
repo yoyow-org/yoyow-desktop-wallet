@@ -1,0 +1,109 @@
+@import "define";
+.box-center{
+  width: 795px;
+ color:$whiteColor;
+  margin: 0 auto;
+  h1{
+    font-size: $bigFontSize;
+    font-weight: normal;
+    padding-top: 78px;
+  }
+  .clock{
+    display: inline-block;
+    width: 112px;
+    height: 112px;
+    background: url("../img/clock.png") no-repeat;
+    margin-top: 40px;
+  }
+  p{
+    font-size: $titleFontSize;
+    margin-top: 30px;
+    line-height:30px;
+  }
+  .apiCtr{
+    font-size:$titleFontSize ;
+    span{
+      padding-right: 20px;
+    }
+    button{
+      margin-top: 30px;
+      margin-left: 20px;
+      @include button(160px);
+      height: 40px;
+      font-size: $butonFontSize;
+    }
+  }
+
+  .state{
+    margin-top: 30px;
+    border-top: 1px $whiteColor solid;
+    padding-top: 30px;
+    font-size: $titleFontSize;
+    span{
+      float: left;
+    }
+    em{
+      float: right;
+      color:$greenColor
+    }
+    .disconnect{
+      color: $regColor;
+    }
+  }
+}
+.layer-modal-intl-error{
+  .encrypt{
+    height: 270px;
+  }
+  ul{
+    float: left;
+    clear: both;
+    width: 100%;
+    max-height: 130px;
+    min-height: 130px;
+    overflow: auto;
+    margin-top: 20px;
+    li{
+      height: 40px;
+      width: 100%;
+      cursor:pointer;
+      line-height: 40px;
+      float: left;
+      clear: both;
+      @include flexBox;
+      span{
+        @include flexBox;
+        padding: 0 10px;
+        flex: 1;
+        &:hover{
+          background: $greenColor;
+          color: $whiteColor;
+        }
+      }
+      em{
+        width: 40px;
+        padding: 20px;
+      }
+
+    }
+  }
+  .layer-list{
+    @include flexBox;
+    float: left;
+    clear: both;
+    width: 100%;
+    margin-top: 20px;
+    input[type=text]{
+      @include input_text(450px);
+      height: 40px;
+      flex: 1;
+      @include flexBox;
+    }
+    button[type=button]{
+      @include button(120px);
+      height: 40px;
+      font-size: $butonFontSize;
+      @include flexBox;
+    }
+  }
+}

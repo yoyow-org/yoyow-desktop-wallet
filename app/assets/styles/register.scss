@@ -1,0 +1,107 @@
+@import "define";
+
+.page {
+  background-color: $pageBgColor;
+  text-align: center;
+}
+
+.page > div {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.page .white-box {
+  width: 530px;
+  height: 478px;
+  background-color: $whiteColor;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.white-box h2 {
+  padding-top: 35px;
+  margin-bottom: 30px;
+  font-size: $titleBiggerFontSize;
+  color: $greenColor;
+}
+
+.white-box h2 > img {
+  vertical-align: text-top;
+}
+
+.white-box>p {
+  font-size: $middleSize;
+}
+.white-box .form{
+  width: 400px;
+  text-align: left;
+  margin: 0 auto 0 auto;
+}
+
+.account-id{
+  color: #000;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  font-size: $fontSize;
+  margin: 10px 0;
+}
+
+.account-owner{
+  @extend .account-id;
+  font-size: $middleSize;
+  font-weight: normal;
+  margin: 20px 0 20px 0;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.white-box > hr {
+  width: 400px;
+  margin: 33px auto 30px auto;
+  height: 1px;
+  border: none;
+  border-top: 1px solid $hrColor;
+}
+
+.input-reg-pwd-400 {
+  @include input_text(400px);
+  border-left: 1px $greenColor solid;
+  height: 42px;
+}
+
+.wrong-text {
+  font-size: $smallFontSize;
+  color: $regColor;
+  line-height: $smallFontSize;
+}
+
+.error-text {
+  @extend .wrong-text;
+}
+.check-label{
+  font-size: $smallFontSize;
+}
+
+.wrong-box {
+  text-align: left;
+  width: 400px;
+  margin: 25px auto 25px auto;
+  color: $blackColor;
+  font-size: $smallFontSize;
+}
+
+.blue-button-400 {
+  @include button(400px);
+  height: 40px;
+}
+
+.text-link {
+  font-size: $smallFontSize;
+  color: $greenColor;
+  text-decoration: none;
+  display: block;
+  &:hover {
+    color: $blueColor;
+  }
+}

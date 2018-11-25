@@ -1,0 +1,30 @@
+@keyframes modal-flip-enter {
+  from {
+    transform: perspective(400px) rotate3d(1, 0, 0, 80deg);
+  }
+  70% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -15deg);
+  }
+  to {
+    transform: perspective(400px);
+  }
+}
+.modal-flip-enter {
+  animation: modal-flip-enter both ease-in;
+  backface-visibility: visible !important;
+}
+@keyframes modal-flip-leave {
+  from {
+    transform: perspective(400px);
+  }
+  30% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -15deg);
+  }
+  to {
+    transform: perspective(400px) rotate3d(1, 0, 0, 80deg);
+  }
+}
+.modal-flip-leave {
+  animation: modal-flip-leave both;
+  backface-visibility: visible !important;
+}

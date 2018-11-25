@@ -1,0 +1,55 @@
+@import "define";
+.help-meun {
+  padding: 40px 20px 20px 20px;
+  color: $greenColor;
+  font-size: $fontSize;
+  > h1, h2, h3, a {
+    color: $whiteColor;
+  }
+  > h2 {
+    font-size: $titleBiggerFontSize;
+    text-align: center;
+    color: $greenColor;
+  }
+  > ul {
+    margin-top: 20px;
+    padding-left: 20px;
+    > li {
+      line-height: 38px;
+      list-style:disc;
+      color: $greenColor;
+      > a{
+        color: $greenColor;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.help-content {
+  font-size: $fontSize;
+  color: $grayColor;
+  padding: 20px;
+  > h1 {
+    font-size: $titleBiggerFontSize
+  }
+  > h2 {
+    font-size: $titleFontSize
+  }
+  > p, ul {
+    line-height: 26px;
+    margin: 10px 0px;
+    > li {
+      list-style: disc;
+      margin-left: 26px;
+    }
+  }
+  >ol {
+    line-height: 26px;
+    margin: 10px 0px;
+    > li {
+      list-style: decimal;
+      margin-left: 26px;
+    }
+  }
+}

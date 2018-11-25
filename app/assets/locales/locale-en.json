@@ -1,0 +1,589 @@
+{
+  "languages": {
+    "zh": "简体中文",
+    "en": "English"
+  },
+  "button": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "reset": "Reset"
+  },
+  "error": {
+    "unknown_error": "Unknown error",
+    "apis_error": "APIS Error",
+    "get_fees_error": "Get Fees Rate Error",
+    "error_account":"Your current account is disabled due to reset, You can use the latest backup files to restore account.",
+    "error_account_memo":"Because your current account has been reset, you cannot view the comments before the reset"
+  },
+  "dialog": {
+    "info_title": "Tips",
+    "error_title": "Opration Error",
+    "memo_title": "View Memo"
+  },
+  "password": {
+    "wrong_length": "The password must contain at least 12 characters,a combination of numbers, special characters or letters.",
+    "wrong_confirm": "The confirmation does not match the password",
+    "ph_enter_new_pwd": "Please input new password",
+    "ph_enter_new_pwd_confirm": "Please confirm new password"
+  },
+  "footer": {
+    "notice_connected": "Net connected",
+    "notice_disconnected": "Net disconnected",
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "head_block": "Head block："
+  },
+  "create_account": {
+    "title_register": "Register",
+    "title_register_with_auth": "Register and Authorize",
+    "ph_pwd": "Enter Password",
+    "ph_pwd_confirm": "Confirm Password",
+    "note": "Note:",
+    "note_msg": "Your password is not stored in the browser or in a central server,please ensure that you remember this password!",
+    "create": "Create Account",
+    "create_with_auth": "Create and Authorize",
+    "import_file": "Account Restore",
+    "restore_key": "Account Reset",
+    "register_success": " Congratulations, registered successfully！",
+    "yoyow_id": "YOYOW ID:",
+    "account_key": "Account Private Key:",
+    "prompt_p1": "Account Private Key owns the supreme authority, can be used for account recovery and password reset!",
+    "prompt_p2": "Private key is NOT stored in the local wallet or browser. Please keep it safe as it cannot be recovered!",
+    "backed_up": " I have already backup the Account Private Key",
+    "complete": "Complete",
+    "complete_with_jump": "Complete and Redirect"
+  },
+  "import_file": {
+    "password": "Password：",
+    "notice_pwd_error": "Incorrect password",
+    "title": "Account Restore",
+    "prompt": "Please select your backup file in the dialog below. This is completely safe as the file is not uploaded anywhere and never leaves your browser.",
+    "select_file": "Select backup file",
+    "file_size": "File size:",
+    "file_hash": "File SHA1:"
+  },
+  "restore_account": {
+    "title": "Account Reset",
+    "restore_key_with_auth":"Private key recovery and authorization",
+    "import_file_with_auth":"Import account and authorization",
+    "complete_and_back":"Restore account and authorize",
+    "error_key_invalid": "Invalid Key",
+    "new_pwd": "New password",
+    "confirm_pwd": "Confirm password",
+    "account_key": "Account Private key",
+    "ph_enter_key": "Please enter your private key",
+    "restore_ok": " Reset Successfully",
+    "prompt_p1": "Store your Account Private Key！It can be used for account recovery and password reset！",
+    "prompt_p2": "Private key will be not stored in the local wallet or the browser",
+    "prompt_p3": "Store it using a password manager or by writing it down manually, you can NOT acquire it again once lost"
+  },
+  "erc20": {
+    "title": "ERC20 Gateway",
+    "note": "Conversion from ethereum ERC20 tokens to YOYOW main net tokens is now available. Click the “Generate” button, an ethereum address will be assigned automatically. Send your YOYOW token from your ERC20 compatible ethereum wallet to this address, the system will automatically transfer equivalent number of YOYO tokens to your YOYOW account. ",
+    "current_account": "Current account：",
+    "bind_eth": "Bind ether address：",
+    "btn_generate": "Generate",
+    "transfer_out_note": "Convert YOYOW main net tokens to ethereum ERC20 tokens. The conversion will be processed automatically within one minute. Usually it will take a few minutes to reach your ethereum address.",
+    "transfer_out_to": "To：",
+    "placeholder_out_address": "Please enter the ETH address",
+    "transfer_out_amount": "Amount：",
+    "placeholder_out_amount": "Please enter the amount of %(unit)s",
+    "useable": "Available：",
+    "fees": "ERC20 Gateway Fees：",
+    "confirm_note": "ERC20 Gateway fees will be charged from the amount transferred. Please make sure the amount is greater than %(amount)s.",
+    "confirm_btn": "Submit",
+    "transfer_in_title": "In(ERC20)",
+    "transfer_out_title": "Out(ERC20)",
+    "alert_input_address": "Please enter the ETH address",
+    "alert_input_amount": "Please enter the amount of transfers",
+    "alert_valid_amount": "The amount of transfers must be greater than %(amount)s %(unit)s",
+    "error_address": "Invalid ETH address",
+    "error_balance": "The balance is not sufficient to cover the entire operating costs",
+    "error_master": "ERC20 Gateway account exception",
+    "success_info": "Submit successful",
+    "qrcode":"ETH address"
+  },
+  "bts": {
+    "title": "Gateway",
+    "note_info":"For example：",
+    "note": "Transfer Yoyo from BTS to yoyow.gateway (number ID # 402807) Memo memo transfer Note: 'yoyow # main network account' (double quotes do not need to fill in), to completeYOYO main network automatically issued, the first proposed micro-transfer first try. As shown below:",
+    "transfer_out_note": "Gateway automatically charge, crediting time depending on the confirmation speed of the BTS may be, in about 1 minute.",
+    "transfer_out_to": "To：",
+    "placeholder_out_address": "Please enter BTS account",
+    "transfer_out_amount": "Amount：",
+    "placeholder_out_amount": "Please enter the amount of %(unit)s",
+    "useable": "Available：",
+    "fees": "Gateway Fees：：",
+    "confirm_note": "Gateway fees will be charged from the amount transferred. Please make sure the amount is greater than %(amount)s.",
+    "confirm_btn": "Submit",
+    "transfer_in_title": "In",
+    "transfer_out_title": "Out",
+    "alert_input_address": "Please enter the BTS address",
+    "alert_input_amount": "Please enter the amount of transfers",
+    "alert_valid_amount": "The amount of transfers must be greater than %(amount)s %(unit)s",
+    "error_balance": "The balance is not sufficient to cover the entire operating costs",
+    "error_master": "Gateway account exception",
+    "success_info": "Submit successful",
+    "unknown_error": "Unknown error",
+    "qrcode": "ETH address"
+  },
+  "left_menu": {
+    "assets": "Token",
+    "transfer": "Transfer",
+    "erc20": "Gateway",
+    "contacts": "Contacts",
+    "recent_activity": "History",
+    "help": "Help",
+    "settings": "Settings",
+    "account": "Account",
+    "change_password": "Reset",
+    "backup": "Backup",
+    "restore_import": "Restore",
+    "access_point": "API server",
+    "vote": "vote",
+    "gen_qrcode": "Account QRcode"
+  },
+  "balance": {
+    "assets_title": "My Token",
+    "assets_type": "Token Types",
+    "assets_amounts": "Amount",
+    "assets_operation": "Operation",
+    "balance": "YOYO Balance",
+    "prepaid": "YOYO Tipping",
+    "erc20": "Gateway",
+    "create_token": "Issue Token",
+    "transfer": "Transfer",
+    "transfer_to_balance": "To Balance",
+    "transfer_to_prepaid": "To Tipping",
+    "click_collect": "Collect",
+    "day": "Day",
+    "csaf_title": "Bonus Points",
+    "csaf_current_limit": "Current/Top-up",
+    "csaf_gather": "Accumulation Rate",
+    "csaf_collect": "Collect Bonus Points",
+    "alert_balance_not_enough": "Exceed maximum avilable amount of Balance",
+    "alert_prepaid_not_enough": "Exceeds maximum avilable amount of Tipping Account",
+    "alert_empty_csaf": "No more Bonus Points to collect",
+    "memo_to_balance": "Tipping account to Balance",
+    "memo_to_prepaid": "Balance to Tipping account",
+    "success": "Success",
+    "failure": "Failure",
+    "alert_invalid_amount": "Invalid Amount",
+    "alert_balance_cant_pay": "Exceed maximum avilable amount of Balance",
+    "alert_prepaid_cant_pay": "Exceeds maximum avilable amount of Tipping Account",
+    "transfer_amount": "Amount",
+    "placeholder_transfer_amount": "Input transfer amount",
+    "csaf_collect_title": "Bonus Points",
+    "alert_csaf_invalid_uid": "Invalid YOYOW Account",
+    "alert_casf_invalid_amount": "Bonus Points amount must be more than 0",
+    "alert_csaf_balance_cant_pay": "Balance NOT enough to pay the fee",
+    "alert_casf_prepaid_cant_pay": "The Tipping Account NOT enough to pay the fee",
+    "alert_csaf_choose_account": "Select account",
+    "notify_csaf_success": "Success",
+    "alert_csaf_over_limit": "Over Limit",
+    "alert_csaf_not_enough": "Bonus Points to be collected NOT enough",
+    "error_csaf_collect": "Collect Bonus Points Error",
+    "csaf_collect_to": "To",
+    "csaf_placeholder_input_yoyow": "Input YOYOW Account",
+    "csaf_invalid_yoyow": "Invalid YOYOW Account",
+    "csaf_account_collect_limit": "Upper limit",
+    "csaf_unit_text": "Bonus Points",
+    "csaf_collect_text": "Collect",
+    "error_head_time": "The operation does not match the time on the chain",
+    "pledge_title":"Pledge",
+    "pledge_type":"Pledge Type",
+    "pledge_price":"Pledge Amount",
+    "releasing_price":"Releasing Pledge",
+    "witness_pledge":"Witness Pledge",
+    "committee_member_pledge":"Committee Member Pledge",
+    "change_pledge":"Update Pledge",
+    "current_pledge_price":"Current Pledge",
+    "max_pledge_price":"Max Pledge",
+    "min_pledge_price":"Min Pledge",
+    "upadte_pledge_price":"Update Pledge",
+    "place_holder_pledge_price":"Please Input Pledge Amount",
+    "error_invalid_witness":"Invalid Witness",
+    "error_invalid_committee":"Invalid Committee Member",
+    "error_update_pledge":"Update Pledge Error",
+    "alert_min_pledge": "Min Pledge %(amount)s %(unit)s"
+  },
+  "transfer": {
+    "title": "Transfer",
+    "from": "From",
+    "to": "To",
+    "balance": "Balance",
+    "prepaid": "Tipping",
+    "placeholder_account": "YOYOW Account",
+    "save_contact": "Save to the Contact",
+    "error_invalid_account": "Invalid YOYOW Account",
+    "amount": "Amount",
+    "placeholder_amount": "Transfer Amount",
+    "usable": "Available",
+    "memo": "Remark",
+    "placeholder_memo": "Add remark",
+    "success_transfer": "Transfer Success",
+    "alert_empty_to_account": "YOYOW Account",
+    "alert_other_to_account": "Current account can NOT be destination",
+    "alert_invalid_amount": "Valid Amount",
+    "alert_balance_not_enough": "Exceed maximum avilable amount of Balance",
+    "alert_prepaid_not_enough": "Exceeds maximum avilable amount of Tipping Account",
+    "alert_balance_cant_pay": "Exceed maximum avilable amount of Balance",
+    "alert_prepaid_cant_pay": "Exceed maximum avilable amount of Tipping Account"
+  },
+  "contacts": {
+    "title": "Contact",
+    "button_add": "Add Contacts",
+    "placeholder_filter_account": "Filter by YOYOW ID or Memo",
+    "tab_head_account": "YOYOW ID",
+    "tab_head_memo": "Memo",
+    "tab_head_opration": "Opration",
+    "text_empty_contacts": "No Data",
+    "op_transfer": "Transfer",
+    "op_delete": "Delete",
+    "op_edit": "Edit",
+    "alert_delete_contact": "Delete Contacts?",
+    "error_delete_contact": "Delete Failed",
+    "edit_title": {
+      "add": "Add Contacts",
+      "put": "Update Memo"
+    },
+    "edit_text_account": "Account",
+    "edit_placeholder_account": "YOYOW Account",
+    "edit_text_memo": "Memo",
+    "edit_placeholder_memo": "Less than 30 characters",
+    "edit_error_already_added": "Already exist",
+    "edit_error_invalid_uid": "Invalid Account",
+    "edit_alert_empty_uid": "YOYOW Account",
+    "edit_alert_empty_memo": "Add Memo",
+    "edit_alert_not_self": "Can not add yourself"
+  },
+  "history": {
+    "title": "History",
+    "tab_head_type": "Types",
+    "tab_head_change": "Records",
+    "tab_head_info": "Details",
+    "tab_head_csaf": "Bonus Points",
+    "tab_head_fees": "Fees",
+    "tab_head_date": "Date",
+    "tab_head_memo": "Memo",
+    "text_empty_data": "No Data",
+    "text_none": "None",
+    "text_load_more": "Load More",
+    "text_loading": "Loading...",
+    "text_load_done": "All Loaded",
+    "text_view_memo": "View Memo",
+    "text_view": "View",
+    "type_all": "All",
+    "type_in": "Transfer-In",
+    "type_out": "Transfer-Out",
+    "type_csaf": "Bonus Points",
+    "type_token": "Token",
+    "text_to": "to",
+    "op_type": {
+      "1": "Transfer-In",
+      "2": "Transfer-Out",
+      "3": "Bonus Points",
+      "4": "Create Token"
+    },
+    "op_change": {
+      "balance": "Balance",
+      "prepaid": "Tipping account"
+    },
+    "op_fees": {
+      "balance": "Balance",
+      "prepaid": "Tipping account",
+      "csaf": "Bonus Points",
+      "none": "None"
+    },
+    "op_transfer": {
+      "collect_csaf": "Collect Bonus Points %(amount)s",
+      "outer_transfer": "Send %(amount)s",
+      "inner_transfer_from_balance": "Transfer %(amount)s from balance to Tipping account",
+      "inner_transfer_from_prepaid": "Transfer %(amount)s from Tipping account to balance",
+      "create_token": "Create Token %(token)s"
+    }
+  },
+  "unlockWallet": {
+    "title": {
+      "active": "Unlock Account",
+      "second": "Unlock Tipping Account "
+    },
+    "text": {
+      "active": "Account PWD",
+      "second": "Tipping Account PWD"
+    },
+    "placeholder_text": {
+      "active": "Input Account Password",
+      "second": "Input Tipping Account Password"
+    },
+    "error_text": {
+      "active": "Account Password Error",
+      "second": "tipping account Password Error"
+    }
+  },
+  "layout_fees": {
+    "title": "Fees",
+    "text": "Use %(count)s Bonus Points"
+  },
+  "account": {
+    "title": "Account",
+    "current_account": "Current Account",
+    "view_permission": "View Permissions"
+  },
+  "view_purview": {
+    "title": "Overview",
+    "public_key": "Public Key",
+    "private_key": "Private Key",
+    "button_ok": "OK",
+    "button_cancel": "Cancel",
+    "button_view_private_key": "Show Private Key",
+    "button_view_public_key": "Show Public Key",
+    "button_generate_QR": "Click to show QR code",
+    "generate_QR_title": "Please enter a 6-digit password",
+    "generate_QR_info": "For protecting your private keys. The 6-digit PWD is required when scanning the two-dimensional code",
+    "pwd_tips_Num_only":"The password can only be a number",
+    "pwd_tips_length_only":"The password can only be 6 digits",
+    "pwd_placeholder": "Password",
+    "master_key": {
+      "title": "Owner Key",
+      "info": "Owner key, only can manage other permissions of the account",
+      "public_key": "Public key"
+    },
+    "capital_key": {
+      "title": "Active key",
+      "info": "Active key, can control transfer and manage secondary permissions"
+    },
+    "secondary_key": {
+      "title": "Secondary key",
+      "info": "Secondary key, authorize to media platform operation or tipping account"
+    },
+    "memo_key": {
+      "title": "Memo key",
+      "info": "Memo key ,can view the transaction memo"
+    }
+  },
+  "change_pass_word": {
+    "title": "Reset the password",
+    "tab_name": {
+      "account_pwd": "Account password",
+      "wallet_pwd": "Tipping Account password"
+    },
+    "container": {
+      "new_pwd": {
+        "name": "New password",
+        "pwd_placeholder": "Please enter the new password"
+      },
+      "check_pwd": {
+        "name": "Confirm",
+        "check_pwd_placeholder": "Confirm new password"
+      },
+      "account_pwd": {
+        "title": "Reset the password",
+        "current_account_pwd": {
+          "name": "Current password",
+          "placeholder_value": "Enter the current password"
+        }
+      },
+      "wallet_pwd": {
+        "title": "Tipping account password, which default is account password, required when transfer from Tipping Account. Setting a separate one can reduce the risk. ",
+        "current_wallet_pwd": {
+          "name": "Current password ",
+          "placeholder_value": "Please enter the Tipping Account password"
+        }
+      }
+    },
+    "forget": "Forget password",
+    "tips": {
+      "title": "Tips",
+      "content": "Account password can not be retrieved, only can be reset by importing private keys",
+      "error_message_new": "The password must contain at least 12 characters,a combination of numbers, special characters or letters.",
+      "error_message_bool": "The confirmation does not match the password",
+      "error_message_wrong": "Wrong password, please re-enter",
+      "success": "password has been updated"
+    }
+  },
+  "on_api_change_components": {
+    "title": "Access",
+    "title_info": "Modify the API server",
+    "label_name": "API Server"
+  },
+  "backup_account": {
+    "title": "Backup",
+    "button": "Backup",
+    "tips_content": "Clicking on the button below will generate a backup file with a .bin extension.The file is encrypted using your account password, and can be used to recover your account or migrate your account between different browsers/computers.The backup file does not contain the owner authorization private key for the account",
+    "label_name": "Last backup",
+    "not_backup": "Backup needed",
+    "time": false
+  },
+  "import_account": {
+    "title": "Recover and Reset",
+    "account_backup": {
+      "label": "Select account backup file, restore account",
+      "button_value": "Account Restore"
+    },
+    "private_key_backup": {
+      "label_1": "Enter the account key and reset the account number. After resetting the account, the original backup file will be invalid, and other clients (PC wallet or APP wallet) of the account will also be invalid，",
+      "label_2": "please be careful!",
+      "label_3": "If other client accounts are invalid, the latest backup files can be created here to recover.",
+      "button_value": "Account Reset"
+    }
+  },
+  "init_error":{
+    "title":"Can not connect to API server",
+    "tips_time":"Please make sure your computer system clock is correct",
+    "tips_API":"After synchronizing your computer clock, please refresh this page. If your clock is correct, then you connect the API server may not be synchronized with the block chain data, in which case you can try to use other API server to connect.",
+    "API_setting":{
+      "title":"API server settings",
+      "label_API":"API server",
+      "button_change_API":"Change API server",
+      "button_back_home":"HOME"
+    },
+    "API_state":{
+      "connecting":"connecting",
+      "disconnected":"disconnected"
+    }
+  },
+  "authorize_service": {
+    "title": "Authorize sign in",
+    "platform": "Platform：",
+    "yoyow_id": "YOYOW account：",
+    "note_msg": "You will be authorized to log in to the [%(platform)s] platform",
+    "auth": "authorize sign in",
+    "invalid": "Invalid platform",
+    "invalid_sign": "Invalid signature",
+    "expired": "The request has expired",
+    "invalid_state": "Platform status address is invalid",
+    "invalid_key": "Active key is invalid",
+    "insufficient": "Balance or CSAF insufficient",
+    "invalid_account": "Account does not exists"
+  },
+  "Vote": {
+    "title_vote": "vote",
+    "link_to_proxy": "Set the proxy",
+    "to_proxy": "You entrust %(value)s as your voting proxy.",
+    "Remaining": "remaining %(value)s days",
+    "last_vote_day": "last voting time",
+    "expire_day": "expire date",
+    "erroMsg_black": "You have been blacklisted and can not set up a voting proxy！",
+    "erroMsg_qualifications": "You do not have the voting qualifications, can not set the voting proxy!",
+    "erroMsg_balance_proxy": "Your YOYO balance less than %(value)s, can not set the voting proxy!",
+    "erroMsg_balance_vote": "Your YOYO balance is less than %(value)s, can not vote!",
+    "erroMsg_notEnoughBalance":"After deducting the fee, your balance is less than %(value)s, your YOYO balance is not enough!",
+    "erroMsg_balance_maxvVote": "Can only vote for %(value)s witness!",
+    "erroMsg_target_uid": "You enter the user does not exist, please enter the correct YOYOW number!",
+    "erroMsg_target_uid_qualifications": "You enter the user does not have the voting qualifications, please re-enter!",
+    "active_vote":"You activate the proxy qualifications as a proxy for other YOYOW users, to confirm activation?",
+    "ref_proxy":"You can refresh the qualification of the proxy in order to extend the expiration time, confirm the refresh?",
+    "ref_vote":"You can refresh the voting period, in order to extend the expiration time, confirm the refresh?",
+    "label_password":"password",
+    "error_passord":"password error",
+    "integral":"integral",
+    "button_val_confirm":"confirm",
+    "button_val_cancel":"cancel",
+    "button_val_active":"Activate agent qualification",
+    "button_val_ref":"Refresh valid",
+    "title_active":"Activate agent qualification",
+    "title_ref":"Refresh valid",
+    "title_confirmVote":"Confirm voting",
+    "title_EditVote":"Edit vote",
+
+    "vote_ctr": {
+      "votes_w_info": "This vote a total of %(value)s votes",
+      "title_vote_witness": "witness",
+      "input_placeholder_list_witness": "You can enter the witness yoyow number screening",
+      "ranking": "ranking",
+      "uid_yoyow": "YOYOW",
+      "votes": "votes",
+      "ctr": "vote",
+      "fee_label": "fee",
+      "fee": "Use %(value)s credits to deduct",
+      "value_button": "vote",
+      "vote_success": "Voting successful",
+      "vote_error": "Voting failed",
+      "title_vote_committee": "council",
+      "votes_c_info": "The number of candidates for this poll is %(value)s",
+      "input_placeholder_list_committee": "Enter Council Yoyo number screening",
+      "confirmVoteForNumber": "Are you sure that %(value)s witnesses vote?",
+      "confirmCancelForNumber": "Are you sure that you cancel the vote for %(value)s witnesses?",
+      "confirmVote": "Are you sure to vote for candidate %(value)s?",
+      "confirmCancel": "Are you sure that the candidate who canceled %(value)s votes?",
+      "confirmSelectMinVote":"Your vote did not make any changes, please select again!",
+      "live_success":"Activation successful",
+      "ref_success":"Refresh successfully",
+      "bugTips":"5 account is a system account, temporarily do not provide 5 account and 9 account at the same time choose to vote",
+      "vote_day":"vote time",
+      "validity":"Voting period",
+      "vote_number":"total",
+      "day":"day",
+      "numbers":"tickets",
+      "vote_tips":"You can refresh the expiration date or change the vote",
+      "last_vote": "last vote",
+      "active_time":"active time"
+
+    },
+    "proxy_ctr": {
+      "title_proxy": "council",
+      "link_top_vote": "Go to vote",
+      "value_button_change": "modify the proxy",
+      "value_button_set": "set the proxy",
+      "value_button_remove": "remove the proxy",
+      "fee_label_proxy": "fee",
+      "fee_proxy": "Use %(value)s credits to deduct",
+      "proxy_success_add": "You have successfully set up %(value)s three users for your voting proxy!",
+      "proxy_success_remove": "You have removed your voting proxy",
+      "proxy_error_repeat": "Set proxy repeat",
+      "proxy_error_remove": "Remove proxy failed",
+      "proxy_error_set": "Set proxy failed",
+      "erroMsg_target_uid_self": "Can not set myself as an proxy, please re-enter!",
+      "erroMsg_proxy_is_trustee": "Can not set myself as an agent, please re-enter!",
+      "erromsg_notEnough_fees":"Set proxy fee %(value)s, your YOYO balance is not enough!",
+      "confirm_proxy":"You have a vote in progress, set the agent, your vote will be invalid, you confirm the establishment of voting agents?",
+      "confirm_remove_proxy":"After removing an agent,%(value)s will lose the right to vote on your behalf, confirm removal?"
+    }
+  },
+  "Apisettings":{
+    "Api_setting_title":"API settings",
+    "button_val_del":"Del",
+    "button_val_add":"Add",
+    "button_val_edit":"Edit",
+    "errorMsg":"The API server address is malformed",
+    "button_auto":"auto"
+  },
+  "BroCheck":{
+    "tips":"Tips",
+    "tips_info":"You use the browser non-Google browser, for your information security and better user experience, we recommend that you use Google Chrome.",
+    "download_addr_text":"download",
+    "val_button":"understand"
+  },
+  "QRCode": {
+    "text_title": "Account QRcode",
+    "button_gen": "Generate account QRcode",
+    "error_invalid": "Current account invalid, please reset account",
+    "error_two_pwd": "Balance and Prepaid not same, please set same"
+  },
+  "Token":{
+    "title": "Token Issue",
+    "issue_button": "Issue Token",
+    "tab_head_symbol": "Token symbol",
+    "tab_head_max": "Max Supply",
+    "tab_head_precision": "Precision",
+    "tab_head_desc": "Token Description",
+    "edit_text_symbol": "Token Symbol",
+    "edit_text_max": "Max Supply",
+    "edit_text_precision": "Precision",
+    "edit_text_desc": "Token Desc",
+    "edit_placeholder_symbol": "Please input Token Symbol",
+    "edit_placeholder_max": "Please input Max Supply",
+    "edit_placeholder_desc": "Pleast input Token Desc（100 characters）",
+    "fees": "Fees",
+    "alert_require_balance": "YOYOW balance not enough",
+    "alert_require_symbol": "Pleast input Token Symbol！",
+    "alert_min_symbol": "Token Symbol No less than 3 characters！",
+    "alert_require_supply": "Please input Max Supply！",
+    "alert_max_supply": "The max supply cannot exceed 10 billion！",
+    "alert_require_desc": "Pleast input Token description！",
+    "success_text": "Congratulations, Token has been released successfully! The Token supply has been deposited into your account",
+    "error_unique": "The Token symbol already exists",
+    "error_unknown": "Create Token error"
+  }
+}

@@ -1,0 +1,314 @@
+@import "define";
+//帮助内容
+.box-vote{
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  h3{
+    font-size: $fontSize ;
+    border-bottom: 1px $hrColor solid;
+    line-height: 50px;
+    color: $leftColor;
+    font-weight: 600;
+    span{
+      float: right;
+      font-weight: normal;
+      color: $blueColor;
+      cursor: pointer;
+      span:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  .nav-changepassword{
+    border-bottom: 1px $hrColor solid;
+    padding-top: 15px;
+    height: 57px;
+    li{
+      height: 42px;
+      float: left;
+      cursor: pointer;
+      a{
+        display: inline-block;
+        height: 42px;
+        line-height: 42px;
+        padding: 0 21px;
+        text-decoration: none;
+        color: $blackColor;
+      }
+    }
+    .cur{
+      border: 1px $hrColor solid;
+      border-top: 3px $greenColor solid;
+      border-bottom: 1px $whiteColor solid;
+      a{
+        color:$greenColor;
+        line-height: 36px;
+        height: 39px;
+      }
+    }
+  }
+  .box-vote-flex{
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    .top-info {
+      width: 100%;
+      line-height: 30px;
+      font-size: $middleSize;
+      .proxy-info {
+        float: right;
+      }
+      .vote-info {
+        float: right;
+      }
+    }
+    .time-box{
+      width: 100%;
+      height: 80px;
+      padding: 10px 0;
+      table{
+        float: left;
+        border-top: 1px $defaultBorderColor solid;
+        border-left: 1px $defaultBorderColor solid;
+        th,td{
+          border-bottom: 1px $defaultBorderColor solid;
+          border-right: 1px $defaultBorderColor solid;
+          white-space: nowrap;
+          height: 30px;
+          line-height: 30px;
+          padding: 0 5px;
+          text-align: center;
+        }
+      }
+      div{
+        float: right;
+        line-height: 60px;
+        height: 60px;
+      }
+    }
+    .timeline-box {
+      width: 100%;
+      position: relative;
+      height: 70px;
+      .time-cur {
+        position: absolute;
+        height: 25px;
+        line-height: 25px;
+        color: $blueColor;
+        font-size: $middleSize;
+      }
+      .timeline {
+        float: left;
+        clear: both;
+        width: 100%;
+        height: 20px;
+        position: relative;
+        border: 1px $bgGrayColor solid;
+        margin-top: 30px;
+        div {
+          float: left;
+          clear: both;
+          height: 20px;
+          background: $blueColor;
+        }
+      }
+      .text-box {
+        float: left;
+        clear: both;
+        width: 100%;
+        height: 20px;
+        line-height: 20px;
+        font-size: $smallFontSize;
+        color: $grayColor;
+        span {
+          float: left;
+        }
+        span:nth-child(2) {
+          float: right;
+        }
+      }
+    }
+    .table-box {
+      width: 100%;
+      margin-top: 10px;
+      position: relative;
+      display: flex;
+      min-height: 0;
+      flex: 1;
+      flex-direction: column;
+      .ctr {
+        width: 100%;
+        padding: 10px;
+        border: 1px $defaultBorderColor solid;
+        border-bottom: none;
+        line-height: 30px;
+        input[type=checkbox]{
+          float: left;
+          margin-top: 9px;
+        }
+        label{
+          float: left;
+          span{
+            float: left;
+          }
+        }
+        .buttons{
+          float: right;
+        }
+      }
+      .ctr:last-child {
+        width: 100%;
+        border: 1px $defaultBorderColor solid;
+        background: $whiteColor;
+      }
+      .ctr > div {
+        float: left;
+        >span{
+          float: left;
+          em{
+            color: $blueColor;
+            padding: 0 5px;
+          }
+        }
+      }
+      .ctr .button {
+        float: right;
+        margin-left: 20px;
+      }
+      .table {
+        width: 100%;
+        min-height: 0;
+        flex: 1;
+        position: relative;
+        .forScroll{
+          position: absolute;
+          z-index: 2;
+          top: 0;
+          tr{
+            background: $whiteColor;
+          }
+        }
+        overflow-y: scroll;
+        table {
+          margin-top: 0;
+          position: relative;
+        }
+        .vote{
+          th,td{
+            height: 35px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+.proxy-box {
+  width: 100%;
+  float: left;
+  clear: both;
+  margin-top: 20px;
+  .tips{
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    border-left: 2px $blueColor solid;
+    padding-left: 10px;
+  }
+  .proxy {
+    width: 100%;
+    float: left;
+    clear: both;
+    margin-top: 10px;
+    input {
+      float: left;
+      clear: both;
+    }
+    .error-text {
+      width: 100%;
+      float: left;
+      clear: both;
+      line-height: 30px;
+      margin-top: 10px;
+    }
+    .box-button {
+      width: 100%;
+      float: left;
+      clear: both;
+      margin-top: 10px;
+      height: 34px;
+      line-height: 34px;
+      input, span, label {
+        float: left;
+      }
+      input {
+        margin-top: 12px;
+      }
+      button {
+        float: left;
+        margin-left: 20px;
+        height: 34px;
+        line-height: 34px;
+      }
+      .fee {
+        float: left;
+      }
+    }
+
+  }
+
+}
+
+.popup-window {
+  font-weight: normal;
+  .message-box {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+
+  }
+  .password-box {
+    width: 100%;
+
+    .name {
+      width: 80px;
+      display: inline-block;
+    }
+  }
+  .fee {
+    width: 100%;
+    margin-top: 20px;
+    .name {
+      width: 80px;
+      display: inline-block;
+    }
+    span{
+      padding-right: 10px;
+      em{
+        color: $blackColor;
+      }
+    }
+
+  }
+  .box-button {
+    text-align: right;
+    width: 100%;
+    margin-top: 20px;
+  }
+  button{
+    margin-right: 20px;
+    width: 90px;
+    padding: 0 15px;
+    height: 30px;
+    line-height: 30px;
+  }
+}

@@ -1,0 +1,72 @@
+@import "define";
+.balance-title{
+  background: #f3f3f3;
+  td{
+    font-weight: bold;
+    font-size: 16px;
+    font-family: $basefamily;
+    color: #475b6b;
+  }
+
+}
+.balance-m-line{
+  //top: 10px;
+  .seek-amount{
+    position: relative;
+    float: right;
+    top: -40px;
+    right: 16px;
+  }
+}
+
+.balance-seekbar{
+  top: -30px;
+  left: 95px;
+  .seek-point{
+    top: 12px!important;
+  }
+}
+
+.balance-limit-line{
+  font-size: 14px;
+  font-weight: normal;
+  margin-left: 326px;
+}
+
+.contact-item{
+  width: auto!important;
+  float: left;
+}
+.contact-remark{
+  width: auto!important;
+  margin-left: 35px;
+  float: left;
+  font-size: 14px;
+  color: gray;
+}
+
+.csaf-input{
+  text-align: right;
+  width: 85px;
+}
+
+.erc-btn{
+  color: #4c4c4c;
+  width: 500px;
+  height: 34px;
+  border: 1px #E5E5E5 solid;
+  padding: 0 10px;
+  line-height: 34px;
+  background: #fff;
+}
+
+.erc-usable{
+  position: relative;
+  top: 7px;
+  left: 30px;
+}
+
+.w-100{
+  display: inline-block;
+  width: 100px;
+}

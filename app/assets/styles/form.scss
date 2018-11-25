@@ -1,0 +1,173 @@
+@import "define";
+
+.button-short{
+  @include button(54px)
+}
+.button-search{
+  @include button(34px,url("../img/search.png") center no-repeat $greenColor)
+}
+.button{
+  @include button()
+}
+.button-normal{
+  @include button(120px)
+}
+.button-longer{
+  @include button(200px)
+}
+.button-icon-contact{
+  @include button(130px,url("../img/add_contact.png") 10px 6px no-repeat $greenColor);
+  padding-left: 40px;
+  text-align: left;
+}
+.button-longest{
+  @include button(300px)
+}
+.button-400{
+  @include button(400px)
+}
+.button-cancel{
+  @include button(54px,$whiteColor);
+  color:$grayColor;
+  border: 1px $grayColor solid;
+}
+.button-cancel:hover{
+  color: $whiteColor;
+}
+/* 按钮 */
+
+.input_text{
+  @include input_text()
+}
+.input-100{
+  @include input_text(100px);
+}
+.input-265{
+  @include input_text(265px);
+}
+.input-360{
+  @include input_text(360px);
+}
+.input-340{
+  @include input_text(340px);
+}
+.input-330{
+  @include input_text(330px);
+}
+.input-440{
+  @include input_text(440px);
+}
+.input-460{
+  @include input_text(460px);
+}
+.input-488{
+  @include input_text(488px);
+}
+.input-500{
+  @include input_text(500px);
+}
+.input-520{
+  @include input_text(520px);
+}
+.input-570{
+  @include input_text(570px);
+}
+.input-icon-pwd-400{
+  @include input_text(400px);
+  border-left: 1px $greenColor solid;
+}
+.input-icon-pwd-330{
+  @include input_text(330px);
+  border-left: 1px $greenColor solid;
+}
+.input-icon-pwd-450{
+  @include input_text(450px);
+  border-left: 1px $greenColor solid;
+}
+.input-icon-pwd-490{
+  @include input_text(490px);
+  border-left: 1px $greenColor solid;
+}
+::-webkit-input-placeholder {
+  color: $placeholder;
+}
+:-moz-placeholder {
+  color: $placeholder;
+  opacity: 1;
+}
+::-moz-placeholder {
+  color: $placeholder;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: $placeholder;
+}
+
+:disabled{
+  color: $placeholder;
+}
+
+// 文字按钮
+.font-btn{
+  color: $greenColor;
+  text-decoration: none;
+  &:hover{
+    color: $blueColor;
+  }
+}
+
+input[type=password] {
+  background: url("../img/pwd.png") 10px center no-repeat;
+  padding-left: 30px;
+}
+
+/* 输入框 */
+
+.selecter{
+  @include select();
+  position: relative;
+}
+.selecter>div:first-child{
+  @include select();
+
+}
+.selecter>div input{
+  @include input_text();
+  @include select();
+  padding-right: 30px;
+  background: url("../img/angle-down.png") right 10px center no-repeat  ;
+  width: 100%;
+}
+.selecter .list-select{
+  width: 100%;
+  background: $whiteColor;
+  position: absolute;
+  border: 1px $selectListBorder solid;
+  z-index: 99;
+  ul{
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {width: 10px;}
+    &::-webkit-scrollbar-track-piece{background-color: $globalBgColor;}
+    &::-webkit-scrollbar-thumb{background: $placeholder;}
+    &::-webkit-scrollbar-thumb:vertical:hover{background: #555555}
+    &::-webkit-scrollbar-thumb:horizontal:hover{background: #555555}
+  }
+}
+
+.selecter .list-select ul li{
+  padding-left: 10px;
+  height: 30px;
+  cursor: pointer;
+  line-height: 30px;
+}
+.selecter .list-select ul li:hover{
+  background: $headerFooterSelectColor;
+}
+.selecter .list-select ul li span{
+  width: 100%;
+  height: 30px;
+  display: inline-block;
+}
+/* select */
