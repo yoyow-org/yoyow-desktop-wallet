@@ -78,12 +78,12 @@
     "prompt_p3": "Store it using a password manager or by writing it down manually, you can NOT acquire it again once lost"
   },
   "erc20": {
-    "title": "ERC20 Gateway",
+    "title": "Gateway",
     "note": "Conversion from ethereum ERC20 tokens to YOYOW main net tokens is now available. Click the “Generate” button, an ethereum address will be assigned automatically. Send your YOYOW token from your ERC20 compatible ethereum wallet to this address, the system will automatically transfer equivalent number of YOYO tokens to your YOYOW account. ",
     "current_account": "Current account：",
     "bind_eth": "Bind ether address：",
     "btn_generate": "Generate",
-    "transfer_out_note": "Convert YOYOW main net tokens to ethereum ERC20 tokens. The conversion will be processed automatically within one minute. Usually it will take a few minutes to reach your ethereum address.",
+    "transfer_out_note": "Convert YOYOW mainnet tokens to ethereum ERC20 tokens. The conversion will be processed automatically within one minute. Usually it will take a few minutes to reach your ethereum address.",
     "transfer_out_to": "To：",
     "placeholder_out_address": "Please enter the ETH address",
     "transfer_out_amount": "Amount：",
@@ -116,8 +116,8 @@
     "fees": "Gateway Fees：：",
     "confirm_note": "Gateway fees will be charged from the amount transferred. Please make sure the amount is greater than %(amount)s.",
     "confirm_btn": "Submit",
-    "transfer_in_title": "In",
-    "transfer_out_title": "Out",
+    "transfer_in_title": "In(BTS)",
+    "transfer_out_title": "Out(BTS)",
     "alert_input_address": "Please enter the BTS address",
     "alert_input_amount": "Please enter the amount of transfers",
     "alert_valid_amount": "The amount of transfers must be greater than %(amount)s %(unit)s",
@@ -219,8 +219,8 @@
     "amount": "Amount",
     "placeholder_amount": "Transfer Amount",
     "usable": "Available",
-    "memo": "Remark",
-    "placeholder_memo": "Add remark",
+    "memo": "Memo",
+    "placeholder_memo": "Add memo",
     "success_transfer": "Transfer Success",
     "alert_empty_to_account": "YOYOW Account",
     "alert_other_to_account": "Current account can NOT be destination",
@@ -233,9 +233,9 @@
   "contacts": {
     "title": "Contact",
     "button_add": "Add Contacts",
-    "placeholder_filter_account": "Filter by YOYOW ID or Memo",
+    "placeholder_filter_account": "Filter by YOYOW ID or Remark",
     "tab_head_account": "YOYOW ID",
-    "tab_head_memo": "Memo",
+    "tab_head_memo": "Remark",
     "tab_head_opration": "Opration",
     "text_empty_contacts": "No Data",
     "op_transfer": "Transfer",
@@ -245,16 +245,16 @@
     "error_delete_contact": "Delete Failed",
     "edit_title": {
       "add": "Add Contacts",
-      "put": "Update Memo"
+      "put": "Update Remark"
     },
     "edit_text_account": "Account",
     "edit_placeholder_account": "YOYOW Account",
-    "edit_text_memo": "Memo",
+    "edit_text_memo": "Remark",
     "edit_placeholder_memo": "Less than 30 characters",
     "edit_error_already_added": "Already exist",
     "edit_error_invalid_uid": "Invalid Account",
     "edit_alert_empty_uid": "YOYOW Account",
-    "edit_alert_empty_memo": "Add Memo",
+    "edit_alert_empty_memo": "Add Remark",
     "edit_alert_not_self": "Can not add yourself"
   },
   "history": {
@@ -392,7 +392,7 @@
         }
       }
     },
-    "forget": "Forget password",
+    "forget": "Forgot password",
     "tips": {
       "title": "Tips",
       "content": "Account password can not be retrieved, only can be reset by importing private keys",
@@ -490,7 +490,7 @@
     "vote_ctr": {
       "votes_w_info": "This vote a total of %(value)s votes",
       "title_vote_witness": "witness",
-      "input_placeholder_list_witness": "You can enter the witness yoyow number screening",
+      "input_placeholder_list_witness": "Enter the candidates' Yoyo number",
       "ranking": "ranking",
       "uid_yoyow": "YOYOW",
       "votes": "votes",
@@ -500,9 +500,9 @@
       "value_button": "vote",
       "vote_success": "Voting successful",
       "vote_error": "Voting failed",
-      "title_vote_committee": "council",
+      "title_vote_committee": "committee",
       "votes_c_info": "The number of candidates for this poll is %(value)s",
-      "input_placeholder_list_committee": "Enter Council Yoyo number screening",
+      "input_placeholder_list_committee": "Enter the candidates' Yoyo number",
       "confirmVoteForNumber": "Are you sure that %(value)s witnesses vote?",
       "confirmCancelForNumber": "Are you sure that you cancel the vote for %(value)s witnesses?",
       "confirmVote": "Are you sure to vote for candidate %(value)s?",
@@ -522,7 +522,7 @@
 
     },
     "proxy_ctr": {
-      "title_proxy": "council",
+      "title_proxy": "committee",
       "link_top_vote": "Go to vote",
       "value_button_change": "modify the proxy",
       "value_button_set": "set the proxy",
@@ -557,7 +557,7 @@
   },
   "QRCode": {
     "text_title": "Account QRcode",
-    "button_gen": "Generate account QRcode",
+    "button_gen": "Generate QRcode",
     "error_invalid": "Current account invalid, please reset account",
     "error_two_pwd": "Balance and Prepaid not same, please set same"
   },
