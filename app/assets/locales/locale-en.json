@@ -79,7 +79,7 @@
   },
   "erc20": {
     "title": "Gateway",
-    "note": "Conversion from ethereum ERC20 tokens to YOYOW main net tokens is now available. Click the “Generate” button, an ethereum address will be assigned automatically. Send your YOYOW token from your ERC20 compatible ethereum wallet to this address, the system will automatically transfer equivalent number of YOYO tokens to your YOYOW account. ",
+    "note": "Conversion from ethereum ERC20 tokens to YOYOW mainnet tokens is now available. Click the “Generate” button, an ethereum address will be assigned automatically. Send your YOYOW token from your ERC20 compatible ethereum wallet to this address, the system will automatically transfer equivalent number of YOYO tokens to your YOYOW account. ",
     "current_account": "Current account：",
     "bind_eth": "Bind ether address：",
     "btn_generate": "Generate",
@@ -105,9 +105,9 @@
   },
   "bts": {
     "title": "Gateway",
-    "note_info":"For example：",
-    "note": "Transfer Yoyo from BTS to yoyow.gateway (number ID # 402807) Memo memo transfer Note: 'yoyow # main network account' (double quotes do not need to fill in), to completeYOYO main network automatically issued, the first proposed micro-transfer first try. As shown below:",
-    "transfer_out_note": "Gateway automatically charge, crediting time depending on the confirmation speed of the BTS may be, in about 1 minute.",
+    "note_info":"Procedures：",
+    "note": "To transfer YOYO from BTS DEX to yoyow.gateway (ID#402807), please indicate \"yoyow#your mainnet account number\" (without the quotation marks) in the memo. Mainnet YOYO tokens will be deposited to your account automatically. It is recommended to test with a small amount first.  Example:",
+    "transfer_out_note": "The gateway will automatically withdraw. The withdraw arrival time will depend on the confirmation speed of BTS, about less than 1 min.",
     "transfer_out_to": "To：",
     "placeholder_out_address": "Please enter BTS account",
     "transfer_out_amount": "Amount：",
@@ -328,7 +328,7 @@
   "account": {
     "title": "Account",
     "current_account": "Current Account",
-    "view_permission": "View Permissions"
+    "view_permission": "Permissions"
   },
   "view_purview": {
     "title": "Overview",
@@ -490,7 +490,7 @@
     "vote_ctr": {
       "votes_w_info": "This vote a total of %(value)s votes",
       "title_vote_witness": "witness",
-      "input_placeholder_list_witness": "Enter the candidates' Yoyo number",
+      "input_placeholder_list_witness": "Enter the candidate's Yoyo number",
       "ranking": "ranking",
       "uid_yoyow": "YOYOW",
       "votes": "votes",
@@ -502,7 +502,7 @@
       "vote_error": "Voting failed",
       "title_vote_committee": "committee",
       "votes_c_info": "The number of candidates for this poll is %(value)s",
-      "input_placeholder_list_committee": "Enter the candidates' Yoyo number",
+      "input_placeholder_list_committee": "Enter the candidate's Yoyo number",
       "confirmVoteForNumber": "Are you sure that %(value)s witnesses vote?",
       "confirmCancelForNumber": "Are you sure that you cancel the vote for %(value)s witnesses?",
       "confirmVote": "Are you sure to vote for candidate %(value)s?",
@@ -557,7 +557,7 @@
   },
   "QRCode": {
     "text_title": "Account QRcode",
-    "button_gen": "Generate QRcode",
+    "button_gen": "QR Code",
     "error_invalid": "Current account invalid, please reset account",
     "error_two_pwd": "Balance and Prepaid not same, please set same"
   },
