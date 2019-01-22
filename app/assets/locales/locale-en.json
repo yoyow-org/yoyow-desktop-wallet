@@ -78,12 +78,12 @@
     "prompt_p3": "Store it using a password manager or by writing it down manually, you can NOT acquire it again once lost"
   },
   "erc20": {
-    "title": "ERC20 Gateway",
-    "note": "Conversion from ethereum ERC20 tokens to YOYOW main net tokens is now available. Click the “Generate” button, an ethereum address will be assigned automatically. Send your YOYOW token from your ERC20 compatible ethereum wallet to this address, the system will automatically transfer equivalent number of YOYO tokens to your YOYOW account. ",
+    "title": "Gateway",
+    "note": "Conversion from ethereum ERC20 tokens to YOYOW mainnet tokens is now available. Click the “Generate” button, an ethereum address will be assigned automatically. Send your YOYOW token from your ERC20 compatible ethereum wallet to this address, the system will automatically transfer equivalent number of YOYO tokens to your YOYOW account. ",
     "current_account": "Current account：",
     "bind_eth": "Bind ether address：",
     "btn_generate": "Generate",
-    "transfer_out_note": "Convert YOYOW main net tokens to ethereum ERC20 tokens. The conversion will be processed automatically within one minute. Usually it will take a few minutes to reach your ethereum address.",
+    "transfer_out_note": "Convert YOYOW mainnet tokens to ethereum ERC20 tokens. The conversion will be processed automatically within one minute. Usually it will take a few minutes to reach your ethereum address.",
     "transfer_out_to": "To：",
     "placeholder_out_address": "Please enter the ETH address",
     "transfer_out_amount": "Amount：",
@@ -105,9 +105,9 @@
   },
   "bts": {
     "title": "Gateway",
-    "note_info":"For example：",
-    "note": "Transfer Yoyo from BTS to yoyow.gateway (number ID # 402807) Memo memo transfer Note: 'yoyow # main network account' (double quotes do not need to fill in), to completeYOYO main network automatically issued, the first proposed micro-transfer first try. As shown below:",
-    "transfer_out_note": "Gateway automatically charge, crediting time depending on the confirmation speed of the BTS may be, in about 1 minute.",
+    "note_info":"Procedures：",
+    "note": "To transfer YOYO from BTS DEX to yoyow.gateway (ID#402807), please indicate \"yoyow#your mainnet account number\" (without the quotation marks) in the memo. Mainnet YOYO tokens will be deposited to your account automatically. It is recommended to test with a small amount first.  Example:",
+    "transfer_out_note": "The gateway will automatically withdraw. The withdraw arrival time will depend on the confirmation speed of BTS, about less than 1 min.",
     "transfer_out_to": "To：",
     "placeholder_out_address": "Please enter BTS account",
     "transfer_out_amount": "Amount：",
@@ -116,8 +116,8 @@
     "fees": "Gateway Fees：：",
     "confirm_note": "Gateway fees will be charged from the amount transferred. Please make sure the amount is greater than %(amount)s.",
     "confirm_btn": "Submit",
-    "transfer_in_title": "In",
-    "transfer_out_title": "Out",
+    "transfer_in_title": "In(BTS)",
+    "transfer_out_title": "Out(BTS)",
     "alert_input_address": "Please enter the BTS address",
     "alert_input_amount": "Please enter the amount of transfers",
     "alert_valid_amount": "The amount of transfers must be greater than %(amount)s %(unit)s",
@@ -157,13 +157,13 @@
     "transfer_to_prepaid": "To Tipping",
     "click_collect": "Collect",
     "day": "Day",
-    "csaf_title": "Bonus Points",
+    "csaf_title": "Credits",
     "csaf_current_limit": "Current/Top-up",
     "csaf_gather": "Accumulation Rate",
-    "csaf_collect": "Collect Bonus Points",
+    "csaf_collect": "Collect Credits",
     "alert_balance_not_enough": "Exceed maximum avilable amount of Balance",
     "alert_prepaid_not_enough": "Exceeds maximum avilable amount of Tipping Account",
-    "alert_empty_csaf": "No more Bonus Points to collect",
+    "alert_empty_csaf": "No more Credits to collect",
     "memo_to_balance": "Tipping account to Balance",
     "memo_to_prepaid": "Balance to Tipping account",
     "success": "Success",
@@ -173,21 +173,21 @@
     "alert_prepaid_cant_pay": "Exceeds maximum avilable amount of Tipping Account",
     "transfer_amount": "Amount",
     "placeholder_transfer_amount": "Input transfer amount",
-    "csaf_collect_title": "Bonus Points",
+    "csaf_collect_title": "Credits",
     "alert_csaf_invalid_uid": "Invalid YOYOW Account",
-    "alert_casf_invalid_amount": "Bonus Points amount must be more than 0",
+    "alert_casf_invalid_amount": "Credits amount must be more than 0",
     "alert_csaf_balance_cant_pay": "Balance NOT enough to pay the fee",
     "alert_casf_prepaid_cant_pay": "The Tipping Account NOT enough to pay the fee",
     "alert_csaf_choose_account": "Select account",
     "notify_csaf_success": "Success",
     "alert_csaf_over_limit": "Over Limit",
-    "alert_csaf_not_enough": "Bonus Points to be collected NOT enough",
-    "error_csaf_collect": "Collect Bonus Points Error",
+    "alert_csaf_not_enough": "Credits to be collected NOT enough",
+    "error_csaf_collect": "Collect Credits Error",
     "csaf_collect_to": "To",
     "csaf_placeholder_input_yoyow": "Input YOYOW Account",
     "csaf_invalid_yoyow": "Invalid YOYOW Account",
     "csaf_account_collect_limit": "Upper limit",
-    "csaf_unit_text": "Bonus Points",
+    "csaf_unit_text": "Credits",
     "csaf_collect_text": "Collect",
     "error_head_time": "The operation does not match the time on the chain",
     "pledge_title":"Pledge",
@@ -219,8 +219,8 @@
     "amount": "Amount",
     "placeholder_amount": "Transfer Amount",
     "usable": "Available",
-    "memo": "Remark",
-    "placeholder_memo": "Add remark",
+    "memo": "Memo",
+    "placeholder_memo": "Add memo",
     "success_transfer": "Transfer Success",
     "alert_empty_to_account": "YOYOW Account",
     "alert_other_to_account": "Current account can NOT be destination",
@@ -233,9 +233,9 @@
   "contacts": {
     "title": "Contact",
     "button_add": "Add Contacts",
-    "placeholder_filter_account": "Filter by YOYOW ID or Memo",
+    "placeholder_filter_account": "Filter by YOYOW ID or Remark",
     "tab_head_account": "YOYOW ID",
-    "tab_head_memo": "Memo",
+    "tab_head_memo": "Remark",
     "tab_head_opration": "Opration",
     "text_empty_contacts": "No Data",
     "op_transfer": "Transfer",
@@ -245,16 +245,16 @@
     "error_delete_contact": "Delete Failed",
     "edit_title": {
       "add": "Add Contacts",
-      "put": "Update Memo"
+      "put": "Update Remark"
     },
     "edit_text_account": "Account",
     "edit_placeholder_account": "YOYOW Account",
-    "edit_text_memo": "Memo",
+    "edit_text_memo": "Remark",
     "edit_placeholder_memo": "Less than 30 characters",
     "edit_error_already_added": "Already exist",
     "edit_error_invalid_uid": "Invalid Account",
     "edit_alert_empty_uid": "YOYOW Account",
-    "edit_alert_empty_memo": "Add Memo",
+    "edit_alert_empty_memo": "Add Remark",
     "edit_alert_not_self": "Can not add yourself"
   },
   "history": {
@@ -262,7 +262,7 @@
     "tab_head_type": "Types",
     "tab_head_change": "Records",
     "tab_head_info": "Details",
-    "tab_head_csaf": "Bonus Points",
+    "tab_head_csaf": "Credits",
     "tab_head_fees": "Fees",
     "tab_head_date": "Date",
     "tab_head_memo": "Memo",
@@ -276,13 +276,13 @@
     "type_all": "All",
     "type_in": "Transfer-In",
     "type_out": "Transfer-Out",
-    "type_csaf": "Bonus Points",
+    "type_csaf": "Credits",
     "type_token": "Token",
     "text_to": "to",
     "op_type": {
       "1": "Transfer-In",
       "2": "Transfer-Out",
-      "3": "Bonus Points",
+      "3": "Credits",
       "4": "Create Token"
     },
     "op_change": {
@@ -292,11 +292,11 @@
     "op_fees": {
       "balance": "Balance",
       "prepaid": "Tipping account",
-      "csaf": "Bonus Points",
+      "csaf": "Credits",
       "none": "None"
     },
     "op_transfer": {
-      "collect_csaf": "Collect Bonus Points %(amount)s",
+      "collect_csaf": "Collect Credits %(amount)s",
       "outer_transfer": "Send %(amount)s",
       "inner_transfer_from_balance": "Transfer %(amount)s from balance to Tipping account",
       "inner_transfer_from_prepaid": "Transfer %(amount)s from Tipping account to balance",
@@ -323,12 +323,12 @@
   },
   "layout_fees": {
     "title": "Fees",
-    "text": "Use %(count)s Bonus Points"
+    "text": "Use %(count)s Credits"
   },
   "account": {
     "title": "Account",
     "current_account": "Current Account",
-    "view_permission": "View Permissions"
+    "view_permission": "Permissions"
   },
   "view_purview": {
     "title": "Overview",
@@ -392,7 +392,7 @@
         }
       }
     },
-    "forget": "Forget password",
+    "forget": "Forgot password",
     "tips": {
       "title": "Tips",
       "content": "Account password can not be retrieved, only can be reset by importing private keys",
@@ -490,7 +490,7 @@
     "vote_ctr": {
       "votes_w_info": "This vote a total of %(value)s votes",
       "title_vote_witness": "witness",
-      "input_placeholder_list_witness": "You can enter the witness yoyow number screening",
+      "input_placeholder_list_witness": "Enter the candidate's Yoyo number",
       "ranking": "ranking",
       "uid_yoyow": "YOYOW",
       "votes": "votes",
@@ -500,9 +500,9 @@
       "value_button": "vote",
       "vote_success": "Voting successful",
       "vote_error": "Voting failed",
-      "title_vote_committee": "council",
+      "title_vote_committee": "committee",
       "votes_c_info": "The number of candidates for this poll is %(value)s",
-      "input_placeholder_list_committee": "Enter Council Yoyo number screening",
+      "input_placeholder_list_committee": "Enter the candidate's Yoyo number",
       "confirmVoteForNumber": "Are you sure that %(value)s witnesses vote?",
       "confirmCancelForNumber": "Are you sure that you cancel the vote for %(value)s witnesses?",
       "confirmVote": "Are you sure to vote for candidate %(value)s?",
@@ -522,7 +522,7 @@
 
     },
     "proxy_ctr": {
-      "title_proxy": "council",
+      "title_proxy": "committee",
       "link_top_vote": "Go to vote",
       "value_button_change": "modify the proxy",
       "value_button_set": "set the proxy",
@@ -557,7 +557,7 @@
   },
   "QRCode": {
     "text_title": "Account QRcode",
-    "button_gen": "Generate account QRcode",
+    "button_gen": "QR Code",
     "error_invalid": "Current account invalid, please reset account",
     "error_two_pwd": "Balance and Prepaid not same, please set same"
   },

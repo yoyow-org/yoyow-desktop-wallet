@@ -2,6 +2,7 @@ import React from "react";
 import BaseComponent from "../BaseComponent";
 import {connect} from "alt-react";
 import WalletStore from "../../stores/WalletStore";
+import IntlStore from "../../stores/IntlStore";
 import ERC20GatewayStore from "../../stores/gateway/ERC20GatewayStore";
 import ERC20GatewayActions from "../../actions/gateway/ERC20GatewayActions";
 import globalParams from "../../utils/GlobalParams";
@@ -14,6 +15,7 @@ import NotificationActions from "../../actions/NotificationActions";
 import QRCode from "qrcode.react";
 import Modal from "../Layout/Modal"
 import Example from "../../assets/img/example.png";
+import ExampleEn from "../../assets/img/example-en.png";
 import {round} from "lodash";
 class ERC20GatewayContainer extends BaseComponent {
 
@@ -311,7 +313,7 @@ class ERC20Gateway extends BaseComponent {
                     <div className="m-t-20">{this.translate("bts.note_info")}</div>
                     <div>{this.translate("bts.note")}</div>
                     <br/>
-                    <img className="img-bts" src={Example}/>
+                    <img className="img-bts" src={IntlStore.getState().currentLocale === "en" ? ExampleEn : Example}/>
                 </div>
                 <div data-title={this.translate("bts.transfer_out_title")} >
                     <div className="m-t-20">
