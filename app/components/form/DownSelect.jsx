@@ -96,7 +96,7 @@ class DownSelect extends BaseComponent {
         let width = this.props.width;
         let list;
         if(defaultObj){
-            if(inputValue && inputValue.trim() == '' && defaultObj.text){
+            if(inputValue != null && inputValue.trim() == '' && defaultObj.text){
                 inputValue = defaultObj.text;
             }else if(data && selectInx <= (data.length -1)){
                 inputValue = data[selectInx].text;
