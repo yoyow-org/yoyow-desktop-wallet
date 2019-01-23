@@ -92,6 +92,7 @@ class SettingsStore extends BaseStore {
             apiServers.push({value: "wss://wallet.yoyow.org/ws", text: "wallet.yoyow.org"});
             apiServers.push({value: "wss://api-bj.yoyow.org/ws", text: "api-bj.yoyow.org"});
             apiServers.push({value: "wss://api-hz.yoyow.org/ws", text: "api-hz.yoyow.org"});
+            apiServers.push({value: "wss://api-eu.yoyow.org/ws", text: "api-eu.yoyow.org"});
             apiServers.push({value: "wss://yoyow.onblockchain.org", text: "yoyow.onblockchain.org"});
         }
         // apiServers.push({value: "ws://localhost:8090", text: "localhost:8090"});
