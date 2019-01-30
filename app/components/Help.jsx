@@ -1,7 +1,7 @@
 
 import React from "react";
 import BaseComponent from "./BaseComponent";
-import {pairs} from "lodash";
+import {toPairs} from "lodash";
 import HelpContent from "./Utility/HelpContent";
 
 class Help extends BaseComponent {
@@ -12,7 +12,7 @@ class Help extends BaseComponent {
 
 
     render() {
-        let path = pairs(this.props.params).map(p => p[1]).join("/");
+        let path = toPairs(this.props.params).map(p => p[1]).join("/");
         return <div>
             <div className="menu_left">
                 <HelpContent path="toc" helpcss="help-meun"/>
