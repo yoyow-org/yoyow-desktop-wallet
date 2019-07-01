@@ -506,7 +506,7 @@ class Vote extends BaseComponent {
                     } else if (adds.length == 0 && removes.length == 0) {
                         msg = this.translate("Vote.vote_ctr.confirmSelectMinVote")
                     } else if (witness_votes.length + adds.length > parms.max_witnesses_voted_per_account) {
-                        msg = this.translate("Vote.erroMsg_balance_maxvVote", { value: parms.min_governance_voting_balance })
+                        msg = this.translate("Vote.erroMsg_balance_maxvVote", { value: parms.max_witnesses_voted_per_account })
                     } else if (c == "vote_c") {
                         if (balance.core_balance + balance.total_committee_member_pledge < parms.min_governance_voting_balance) {
                             msg = this.translate("Vote.erroMsg_balance_vote", { value: parms.min_governance_voting_balance })
