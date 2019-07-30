@@ -19,7 +19,7 @@ class AuthorizeServiceStore extends BaseStore {
     constructor() {
         super();
         this.state = this.__getInitialState();
-        this._export("checkPlatform", "checkSign", "doAuth");
+        this._export("checkPlatform", "checkSign", "doAuth", "checkAccountPlatformAuth");
     }
 
     __getInitialState() {
@@ -43,7 +43,7 @@ class AuthorizeServiceStore extends BaseStore {
      * 更改用户使用资金密钥签名，因为上链修改secondray授权需要active权限
      * 
      */
-    doAuth(yoyow_id, active_pubkey) {
+    doAuth(yoyow_id, permission_flags, max_limit, active_pubkey) {
         let sObj = {
             yoyow: "" + yoyow_id,
             time: "" + (new Date()).getTime()
@@ -53,6 +53,7 @@ class AuthorizeServiceStore extends BaseStore {
         let signed = Signature.signBuffer(new Buffer(JSON.stringify(sObj)), active_priKey);
         let query = `yoyow=${sObj.yoyow}&time=${sObj.time}&sign=${signed.toHex()}`;
         let {platform, state, redirect} = this.state;
+
         let hasRedirect = Validation.isEmpty(redirect) == false;
         let finalUrl = null;
         if (hasRedirect) {
@@ -66,7 +67,7 @@ class AuthorizeServiceStore extends BaseStore {
             if(!finalUrl) finalUrl = state;
         }
         
-        return ChainApi.updateAuthority(yoyow_id, platform, active_priKey).then(res => {
+        return ChainApi.updateAuthority(yoyow_id, platform, permission_flags, max_limit * global.walletConfig.retain_count, active_priKey).then(res => {
             return finalUrl;
         }).catch(e => {
             return Promise.reject(e);
@@ -131,6 +132,18 @@ class AuthorizeServiceStore extends BaseStore {
                     reject(counterpart.translate("authorize_service.invalid"));
                 }
             });
+        });
+    }
+
+    checkAccountPlatformAuth(uid, platform, limit){
+        return new Promise((resolve, reject) => {
+            ChainApi.getAccountPlatformAuth(uid, platform, limit).then(
+                obj => {
+                    resolve(obj);
+                }
+            ).catch( err => {
+                reject(err)
+            })
         });
     }
 }

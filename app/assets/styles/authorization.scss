@@ -1,0 +1,123 @@
+.auth_title {
+    margin: 5px auto 15px auto !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none !important;
+
+    > img {
+        border: 1px solid #E6E9F2;
+        border-radius: 50%;
+        padding: 5px;
+        width: 50px;
+        height: 50px;
+    }
+
+    > .lable {
+        font-size: 13px;
+        margin-left: 10px;
+
+        > .platform {
+            color: #36c6d3;
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+
+    }
+}
+
+.auth_body {
+    border-top: 1px solid #E6E9F2;
+    > .auth_list {
+        margin: 20px auto 10px auto;
+        text-align: left;
+        padding: 10px;
+        > lable {
+            font-size: 14px;
+            font-weight: 900;
+        }
+
+        > .tipping_amount{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            > lable {
+                font-size: 12px;
+                color: #6C8A9C;
+            }
+            > input {
+                border: 1px solid #cccccc;
+                background: #ffffff;
+                width: 75%;
+                height: 30px;
+                -webkit-box-shadow: 0 0 0 1000px white inset;
+                color: #282E42;
+                font-size: 13px;
+                padding-left: 5px;
+            }
+        }
+    
+        > .auth_item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            margin: 20px auto;
+
+            > input{
+                height: 0px;
+                width: 0px;
+                visibility: hidden;
+                margin:0;
+                padding:0;
+            }
+
+            >  .switch{
+                display: inline-block;
+                width: 35px;
+                height: 20px;
+                border: 1px solid #DFDFDF;
+                outline: none;
+                border-radius: 16px;
+                box-sizing: border-box;
+                background: #FFFFFF;
+                cursor: pointer;
+                transition: border-color .3s,background-color .3s;
+                vertical-align: middle;
+                position: relative;
+              }
+              > .switch::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: transform 0.3s;
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+                background-color: #fff;
+              }
+            
+            > input:checked + label {
+                background: #34C2CF;
+            }
+
+            > input:checked + label:before {
+                transform: translateX(15px);
+            }
+        }
+    }
+
+}
+
+.auth_buttons {
+    display: flex;
+    justify-content: center;
+
+    > .button{
+        border-radius: 10px;
+        width: 200px;
+        
+    }
+}
