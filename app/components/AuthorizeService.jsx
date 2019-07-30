@@ -74,11 +74,13 @@ class AuthorizeService extends BaseComponent {
         let uid = this.props.wallet.yoyow_id;
         let platform = this.state.platformOwner;
         AuthorizeServiceStore.checkAccountPlatformAuth( uid, platform, 1 ).then( authObj => {
-            if ( authObj.length > 0){
+            if ( authObj.length > 0 ){
                 let authInfo = authObj[0];
                 if( authInfo.is_active == true ){
                     this.setState({ permissionFlag: authInfo.permission_flags, maxLimit: authInfo.max_limit / global.walletConfig.retain_count });
                 }
+            }else{
+                this.setState({ permissionFlag: 223 });
             }
             this.setState({ showConfirmModal: true });
         }).catch( err => {
@@ -96,11 +98,10 @@ class AuthorizeService extends BaseComponent {
             setTimeout(() => {
                 let wallet = WalletStore.getWallet();
                 AuthorizeServiceStore.doAuth(wallet.yoyow_id, permissionFlag, maxLimit, wallet.encrypted_active.pubkey).then(url => {
-                    _this.setState({loading: false});
                     if(url){
                         window.top.location = url;     
                     }else{
-                        _this.setState({error: _this.translate("authorize_service.invalid_state")});
+                        _this.setState({loading: false, showConfirmModal: false, error: _this.translate("authorize_service.invalid_state")});
                     }
                 }).catch(e => {
                     _this.setState({loading: false});
@@ -151,13 +152,12 @@ class AuthorizeService extends BaseComponent {
     handleMaxLimitChange( e ){
         e.preventDefault();
         let limit = parseInt( e.target.value == '' ? 0 : e.target.value );
-        if ( limit >= 0 && limit <= 1000 ){
-            this.setState({ maxLimit: limit })
-        }
+        limit = ( limit < 0 ? 0 : ( limit > 1000 ? 1000 : limit ) );
+        this.setState({ maxLimit: limit });
     }
 
     close(){
-        this.setState({showConfirmModal: false});
+        this.setState({showConfirmModal: false, loading: false});
     }
 
     render() {
@@ -204,11 +204,9 @@ class AuthorizeService extends BaseComponent {
                         <p>{this.translate("authorize_service.note_msg", {platform: platform})}</p>
                     </div>
                     <div style={{marginTop: "0px"}}>
-                        {loading ? <TextLoading/> :
-                            <input className="blue-button-400" type="button" disabled={hashAccount}
+                        <input className="blue-button-400" type="button" disabled={hashAccount}
                                    onClick={this.onConfirm.bind(this)} value={this.translate("authorize_service.auth")}
                             />
-                        }
                     </div>
                     <Link className="text-link" to={`/import-file${urlHash}`}
                           style={{marginTop: "12px"}}>{this.translate("restore_account.import_file_with_auth")}</Link>

@@ -849,9 +849,7 @@ export default {
         let _this = this;
         return new Promise((resolve, reject) => {
             _this.getAccountPlatformAuth(uid, pid, 1).then(authObj => {
-                
                 let hasAuth = false;
-                
                 if(authObj.length >= 1 && authObj[0] != null){
                     let authInfo = authObj[0];
                     if( authInfo.permission_flags == permission_flags && 
