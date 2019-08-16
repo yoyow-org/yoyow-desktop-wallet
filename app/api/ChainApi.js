@@ -823,48 +823,67 @@ export default {
     },
 
     /**
+     * Fetch account's platform authorization info
+     * @param uid         account uid
+     * @param platform    platform id
+     * @param limit       
+     */
+    getAccountPlatformAuth(uid, platform=null, limit=1){
+        return new Promise((resolve, reject) => {
+            Apis.instance().db_api().exec("list_account_auth_platform_by_account", [uid, platform, limit]).then(
+                authObj => {
+                    resolve(authObj);
+                }
+            ).catch(err =>
+                {
+                    reject(err);
+                }
+            )
+        })
+    },
+
+    /**
      * 授权零钱权限
      */
-    updateAuthority(uid, pid, priKey){
+    updateAuthority(uid, pid, permission_flags, max_limit, priKey){
+        let _this = this;
         return new Promise((resolve, reject) => {
-            Apis.instance().db_api().exec("get_accounts_by_uid", [[uid], {
-            }]).then(uObj => {
-                if(uObj.length >= 1 && uObj[0] != null){
-                    let secondary = uObj[0].secondary;
-
-                    let curWallet = WalletStore.getWallet();
-                    let pKey = WalletStore.decryptTcomb_PrivateKey(curWallet.encrypted_active);
-                    let hasAuth = false;
-                    for(let auth of secondary.account_uid_auths){
-                        if(auth[0].uid == pid) hasAuth = true;
+            _this.getAccountPlatformAuth(uid, pid, 1).then(authObj => {
+                let hasAuth = false;
+                if(authObj.length >= 1 && authObj[0] != null){
+                    let authInfo = authObj[0];
+                    if( authInfo.permission_flags == permission_flags && 
+                        authInfo.max_limit == max_limit && authInfo.is_active == true ){
+                        hasAuth = true;
                     }
-                    //一个UID只能存在一次 else 已经授权过的情况跳过授权操作
-                    if(!hasAuth){
-                        let op_data = {
-                            uid: uid,
-                            platform: pid
+                }
+                if(!hasAuth){
+                    let op_data = {
+                        uid: uid,
+                        platform: pid,
+                        extensions: {
+                            limit_for_platform: max_limit,
+                            permission_flags: permission_flags
                         }
-            
-                        let tr = new TransactionBuilder();
-                        tr.add_type_operation("account_auth_platform", op_data);
-                        tr.set_required_fees(uid, true, true).then(() => {
-                            tr.add_signer(priKey); // 资金密钥
-                                tr.broadcast(() => {
-                                    resolve();
-                                }).then(() => {
-                                    resolve();
-                                }).catch(err => {
-                                    if(err.message.indexOf('less than required') >= 0) err = {message: counterpart.translate("authorize_service.insufficient")}
-                                    reject(err);
-                                });
-                        }).catch(e => {
-                            reject(e);
-                        });
-                    }else{
-                        resolve();
                     }
+                    
+                    let tr = new TransactionBuilder();
+                    tr.add_type_operation("account_auth_platform", op_data);
+                    tr.set_required_fees(uid, true, true).then(() => {
+                        tr.add_signer(priKey); // 资金密钥
+                            tr.broadcast(() => {
+                                resolve();
+                            }).then(() => {
+                                resolve();
+                            }).catch(err => {
+                                if(err.message.indexOf('less than required') >= 0) err = {message: counterpart.translate("authorize_service.insufficient")}
+                                reject(err);
+                            });
+                    }).catch(e => {
+                        reject(e);                        
+                    });
                 }else{
-                    reject({message: counterpart.translate("authorize_service.invalid_account")});
+                    resolve();
                 }
             });
         });

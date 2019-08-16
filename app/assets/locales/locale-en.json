@@ -455,7 +455,20 @@
     "invalid_state": "Platform status address is invalid",
     "invalid_key": "Active key is invalid",
     "insufficient": "Balance or CSAF insufficient",
-    "invalid_account": "Account does not exists"
+    "invalid_account": "Account does not exists",
+    "platform_tip": "Platform",
+    "auth_tip": "requests authorization",
+    "auth_options": "Authorization options",
+    "auth_option_transfer_limit": "Transfer amount limitation",
+    "auth_option_forward": "Allow platform to forward articles and change forward price on your behalf",
+    "auth_option_score": "Allow platform to like or score articles on your behalf",
+    "auth_option_buyout": "Allow platform to buyout articles' revenue and sell on your behalf",
+    "auth_option_comment": "Allow platform to comment on other articles on your behalf",
+    "auth_option_reward": "Allow platform to reward other articles on your behalf",
+    "auth_option_transfer": "Allow platform to make transfers of your tipping",
+    "auth_option_post": "Allow platform to publish articles on your behalf",
+    "auth_option_update": "Allow platform to update articles' content on your behalf",
+    "agree_to_authorize": "Agree"
   },
   "Vote": {
     "title_vote": "vote",

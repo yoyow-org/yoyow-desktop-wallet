@@ -22,7 +22,7 @@ class SettingsStore extends BaseStore {
             onClearSettings: SettingsActions.clearSettings,
             onSwitchLocale: IntlActions.switchLocale
         });
-        let apisvr = "ws://47.52.155.181:10011";
+        let apisvr = "wss://api.testnet.yoyow.org";
         let faucetsvr = "http://demo.yoyow.org:3000";
         if (!process.env.test) {
             apisvr = "wss://wallet.yoyow.org/ws";
@@ -87,7 +87,7 @@ class SettingsStore extends BaseStore {
     getApiServers(){
         let apiServers = [];
         if(process.env.test){
-            apiServers.push({value: "ws://47.52.155.181:10011", text: "TESTNET"});
+            apiServers.push({value: "wss://api.testnet.yoyow.org", text: "TESTNET"});
         }else{
             apiServers.push({value: "wss://wallet.yoyow.org/ws", text: "wallet.yoyow.org"});
             apiServers.push({value: "wss://api-bj.yoyow.org/ws", text: "api-bj.yoyow.org"});

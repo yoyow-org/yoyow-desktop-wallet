@@ -455,7 +455,20 @@
     "invalid_state": "平台状态地址无效",
     "invalid_key": "无效的active密钥",
     "insufficient": "余额或积分不足",
-    "invalid_account": "账号不存在"
+    "invalid_account": "账号不存在",
+    "platform_tip": "平台",
+    "auth_tip": "申请授权",
+    "auth_options": "授权权限列表",
+    "auth_option_transfer_limit": "零钱限额",
+    "auth_option_forward": "允许平台转发文章，修改转发价",
+    "auth_option_score": "允许平台点赞或打分",
+    "auth_option_buyout": "允许平台买断文章收益，出售文章收益",
+    "auth_option_comment": "允许平台评论其他文章",
+    "auth_option_reward": "允许平台打赏其他文章",
+    "auth_option_transfer": "允许平台动用零钱权限",
+    "auth_option_post": "允许平台发布文章",
+    "auth_option_update": "允许平台更新文章内容权限",
+    "agree_to_authorize": "同意授权"
   },
   "Vote": {
     "title_vote": "投票",
