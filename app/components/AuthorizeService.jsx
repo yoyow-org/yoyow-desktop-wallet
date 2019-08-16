@@ -77,7 +77,8 @@ class AuthorizeService extends BaseComponent {
             if ( authObj.length > 0 ){
                 let authInfo = authObj[0];
                 if( authInfo.is_active == true ){
-                    this.setState({ permissionFlag: authInfo.permission_flags, maxLimit: authInfo.max_limit / global.walletConfig.retain_count });
+                    let maxLimit = ( ( authInfo.permission_flags >> 5 ) & 1 ) == 0 ? this.state.maxLimit : authInfo.max_limit / global.walletConfig.retain_count;
+                    this.setState({ permissionFlag: authInfo.permission_flags, maxLimit: maxLimit });
                 }
             }else{
                 this.setState({ permissionFlag: 223 });
