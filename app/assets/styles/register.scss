@@ -1,7 +1,6 @@
-@import "define";
+@import 'define';
 
 .page {
-  background-color: $pageBgColor;
   text-align: center;
 }
 
@@ -29,16 +28,16 @@
   vertical-align: text-top;
 }
 
-.white-box>p {
+.white-box > p {
   font-size: $middleSize;
 }
-.white-box .form{
+.white-box .form {
   width: 400px;
   text-align: left;
   margin: 0 auto 0 auto;
 }
 
-.account-id{
+.account-id {
   color: #000;
   font-weight: bold;
   width: 100%;
@@ -47,7 +46,7 @@
   margin: 10px 0;
 }
 
-.account-owner{
+.account-owner {
   @extend .account-id;
   font-size: $middleSize;
   font-weight: normal;
@@ -79,7 +78,7 @@
 .error-text {
   @extend .wrong-text;
 }
-.check-label{
+.check-label {
   font-size: $smallFontSize;
 }
 
