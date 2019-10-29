@@ -25,6 +25,8 @@ import {
     Signature
 } from "yoyowjs-lib";
 
+let maxPrepaidTransferLimit = global.walletConfig.max_prepaid_transfer_limit_for_platform;
+
 class AuthorizeService extends BaseComponent {
     constructor(props) {
         super(props);
@@ -34,7 +36,7 @@ class AuthorizeService extends BaseComponent {
             platform: 0,
             platformOwner: 0, 
             permissionFlag: 0,
-            maxLimit: 1000,
+            maxLimit: maxPrepaidTransferLimit,
             showConfirmModal: false, 
             popupWindowWidth: 450, 
             popupWindowHeight: 647
@@ -78,10 +80,10 @@ class AuthorizeService extends BaseComponent {
                 let authInfo = authObj[0];
                 if( authInfo.is_active == true ){
                     let maxLimit = ( ( authInfo.permission_flags >> 5 ) & 1 ) == 0 ? this.state.maxLimit : authInfo.max_limit / global.walletConfig.retain_count;
-                    this.setState({ permissionFlag: authInfo.permission_flags, maxLimit: maxLimit });
+                    this.setState({ permissionFlag: authInfo.permission_flags, maxLimit: maxLimit > maxPrepaidTransferLimit ? maxPrepaidTransferLimit : maxLimit });
                 }
             }else{
-                this.setState({ permissionFlag: 223 });
+                this.setState({ permissionFlag: 223, maxLimit: maxPrepaidTransferLimit });
             }
             this.setState({ showConfirmModal: true });
         }).catch( err => {
@@ -153,7 +155,7 @@ class AuthorizeService extends BaseComponent {
     handleMaxLimitChange( e ){
         e.preventDefault();
         let limit = parseInt( e.target.value == '' ? 0 : e.target.value );
-        limit = ( limit < 0 ? 0 : ( limit > 1000 ? 1000 : limit ) );
+        limit = ( limit < 0 ? 0 : ( limit > maxPrepaidTransferLimit ? maxPrepaidTransferLimit : limit ) );
         this.setState({ maxLimit: limit });
     }
 
