@@ -33,7 +33,7 @@ class BalanceContainer extends BaseComponent {
             BalanceActions.getMaxCsafLimit(yoyow_id);
         }
 
-        // let {max_csaf_collect, max_csaf_limit, balance} = nextProps;
+        let {balance} = nextProps;
         // let real_csaf_collect = max_csaf_limit;
 
         // real_csaf_collect = Math.min(max_csaf_collect, real_csaf_collect);

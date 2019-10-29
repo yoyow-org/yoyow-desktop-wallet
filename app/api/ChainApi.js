@@ -129,7 +129,8 @@ export default {
                 let {params, dynamicParams} = res[1];
                 // 币天/积分积累
                 // 余额（加上借入的，减去借出的）
-                let effective_balance = Long.fromValue(statistics.core_balance).add(Long.fromValue(statistics.core_leased_in)).sub(Long.fromValue(statistics.core_leased_out));
+                let effective_balance = Long.fromValue(statistics.core_balance).sub(Long.fromValue(statistics.total_witness_pledge)).sub(Long.fromValue(statistics.total_platform_pledge))
+                                .sub(Long.fromValue(statistics.total_committee_member_pledge)).add(Long.fromValue(statistics.core_leased_in)).sub(Long.fromValue(statistics.core_leased_out));
                 // * 一天秒数 / 币龄抵扣手续费比率（csaf_rate）
                 let csaf_accumulate = effective_balance * 86400 / params.csaf_rate * global.walletConfig.csaf_param;
                 // 币天/积分 可领取
