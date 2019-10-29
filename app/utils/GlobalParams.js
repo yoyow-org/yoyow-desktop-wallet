@@ -17,7 +17,8 @@ global.walletConfig = {
     // 链上参数 从链上获取 
     coin_unit: '', // 货币单位
     min_witness_pledge: 0, // 见证人最小抵押
-    min_committee_member_pledge: 0 // 理事会成员最小抵押
+    min_committee_member_pledge: 0, // 理事会成员最小抵押
+    max_prepaid_transfer_limit_for_platform: 1000 //允许平台动用授权用户零钱的最大额度
 };
 
 class GlobalParams {
