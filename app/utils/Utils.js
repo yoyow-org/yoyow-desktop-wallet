@@ -21,8 +21,7 @@ class Utils {
     static calcCoinSecondsEarned(statistics, window, now) {
         let new_average_coins = 0;
         let max_coin_seconds = 0;
-        let effective_balance = Long.fromValue(statistics.core_balance).sub(Long.fromValue(statistics.total_witness_pledge)).sub(Long.fromValue(statistics.total_platform_pledge))
-                                .sub(Long.fromValue(statistics.total_committee_member_pledge)).add(Long.fromValue(statistics.core_leased_in)).sub(Long.fromValue(statistics.core_leased_out));
+        let effective_balance = Long.fromValue(statistics.core_balance).add(Long.fromValue(statistics.core_leased_in)).sub(Long.fromValue(statistics.core_leased_out));
         let nowTime = Long.fromNumber(new Date(now).getTime() / 1000); //头块时间 单位 秒
         nowTime -= nowTime % 60; // 转换成整分钟秒
         let averageUpdateTime = Long.fromNumber(new Date(statistics.average_coins_last_update).getTime() / 1000); //平均余额上次更新时间 单位 秒
