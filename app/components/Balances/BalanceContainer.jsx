@@ -33,14 +33,15 @@ class BalanceContainer extends BaseComponent {
             BalanceActions.getMaxCsafLimit(yoyow_id);
         }
 
-        let {max_csaf_collect, max_csaf_limit, balance} = nextProps;
-        let real_csaf_collect = max_csaf_limit;
+        let {balance} = nextProps;
+        // let real_csaf_collect = max_csaf_limit;
 
-        real_csaf_collect = Math.min(max_csaf_collect, real_csaf_collect);
-        real_csaf_collect = Math.min(balance.csaf_collect / global.walletConfig.csaf_param, real_csaf_collect);
-        if (this.state.real_csaf_collect != real_csaf_collect) {
+        // real_csaf_collect = Math.min(max_csaf_collect, real_csaf_collect);
+        // real_csaf_collect = Math.min(balance.csaf_collect / global.walletConfig.csaf_param, real_csaf_collect);
+        let available_csaf_collect = balance.csaf_collect / global.walletConfig.csaf_param;
+        if (this.state.available_csaf_collect != available_csaf_collect) {
             this.setState({
-                real_csaf_collect: parseFloat(real_csaf_collect),
+                available_csaf_collect: parseFloat(available_csaf_collect),
             });
         }
     }
@@ -53,7 +54,7 @@ class BalanceContainer extends BaseComponent {
             amount: 0,
             useCsaf: true, //是否使用积分
             isSelf: true, //是否领取积分到自己
-            real_csaf_collect: 0
+            available_csaf_collect: 0
         }
     }
 
@@ -132,7 +133,7 @@ class BalanceContainer extends BaseComponent {
     }
 
     render() {
-        let {master, real_csaf_collect} = this.state;
+        let {master, available_csaf_collect} = this.state;
         let {balance, tokens} = this.props;
         return(
             <div className="layer-settings">
@@ -195,7 +196,7 @@ class BalanceContainer extends BaseComponent {
                     <tr>
                         <td>{Utils.formatAmount(balance.csaf_balance * global.walletConfig.csaf_param, 4)}/{Utils.formatAmount(balance.max_csaf_limit * global.walletConfig.csaf_param, 4)}</td>
                         <td>{balance.csaf_accumulate}/{this.translate("balance.day")}</td>
-                        <td>{Utils.formatAmount(real_csaf_collect * global.walletConfig.csaf_param, 4)}（<a className="font-btn m-t-0 hover-hand" onClick={this.onCollectCsaf.bind(this)}>{this.translate("balance.click_collect")}</a>）</td>
+                        <td>{Utils.formatAmount(available_csaf_collect * global.walletConfig.csaf_param, 4)}（<a className="font-btn m-t-0 hover-hand" onClick={this.onCollectCsaf.bind(this)}>{this.translate("balance.click_collect")}</a>）</td>
                     </tr>
                     </tbody>
                 </table>
