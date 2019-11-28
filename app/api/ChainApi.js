@@ -81,7 +81,7 @@ export default {
         if (start != 0) {
             start -= 1;
         }
-        return ChainStore.fetchRelativeAccountHistory(uid, op_type, stop, limit, start).then(res => {
+        return ChainStore.fetchRelativeAccountHistory(uid, op_type, start, limit, stop).then(res => {
             let history = [];
             for (let o of res) {
                 let op = o[1]['op'][1];
