@@ -129,9 +129,9 @@ export default {
                 let {params, dynamicParams} = res[1];
                 // 币天/积分积累
                 // 余额（加上借入的，减去借出的）
-                let effective_balance = Long.fromValue(statistics.core_balance).add(Long.fromValue(statistics.core_leased_in)).sub(Long.fromValue(statistics.core_leased_out));
+                //let effective_balance = Long.fromValue(statistics.core_balance).add(Long.fromValue(statistics.core_leased_in)).sub(Long.fromValue(statistics.core_leased_out));
                 // * 一天秒数 / 币龄抵扣手续费比率（csaf_rate）
-                let csaf_accumulate = effective_balance * 86400 / params.csaf_rate * global.walletConfig.csaf_param;
+                let csaf_accumulate = Long.fromValue(statistics.locked_balance) * 86400 / params.csaf_rate * global.walletConfig.csaf_param;
                 // 币天/积分 可领取
                 let csaf_collect = Math.floor(Utils.calcCoinSecondsEarned(statistics, params.csaf_accumulate_window, dynamicParams.time).new_coin_seconds_earned / params.csaf_rate * global.walletConfig.csaf_param);
                 let assets = {
@@ -140,7 +140,10 @@ export default {
                         .sub(statistics.total_witness_pledge)
                         .sub(statistics.total_committee_member_pledge)
                         .sub(statistics.total_platform_pledge)
-                        .toNumber()), // 实际余额 - 见证人抵押 - 理事会抵押 - 平台抵押
+                        .sub(statistics.total_mining_pledge)
+                        .sub(statistics.locked_balance)
+                        .sub(statistics.releasing_locked_balance)
+                        .toNumber()), // 实际余额 - 见证人抵押 - 理事会抵押 - 平台抵押 - 挖矿抵押 - 锁仓 - 释放中锁仓
                     prepaid_balance: this.realCount(statistics.prepaid), // 零钱
                     csaf_balance: this.realCount(statistics.csaf), // 币天/积分
                     max_csaf_limit: this.realCount(params.max_csaf_per_account), // 币天/积分上限
@@ -152,7 +155,9 @@ export default {
                     releasing_committee_member_pledge: this.realCount(statistics.releasing_committee_member_pledge), // 理事会抵押待退
                     is_pledge: statistics.total_witness_pledge > 0 || statistics.total_committee_member_pledge > 0, // 以是否有抵押判断时候见证人或理事会成员
                     is_witness: statistics.total_witness_pledge > 0, // 是否有见证人抵押
-                    is_committee: statistics.total_committee_member_pledge > 0 // 是否有理事会抵押
+                    is_committee: statistics.total_committee_member_pledge > 0, // 是否有理事会抵押
+                    locked_balance: this.realCount(statistics.locked_balance), //锁仓金额
+                    releasing_locked_balance: this.realCount(statistics.releasing_locked_balance)
                 };
                 return assets;
 
