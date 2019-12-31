@@ -104,13 +104,37 @@ class BalanceContainer extends BaseComponent {
     onChangePledge(e) {
         let {balance} = this.props;
         let {master, amount} = this.state;
-        let is_witness = e.target.getAttribute('data-ctrl') == 'witness';
-        let title = is_witness ? this.translate("balance.witness_pledge") : this.translate("balance.committee_member_pledge");
-        let pledge = is_witness ? balance.total_witness_pledge : balance.total_committee_member_pledge;
-        let pledge_type = is_witness ? 'witness_update' : 'committee_member_update';
-        let min_pledge = is_witness ? global.walletConfig.min_witness_pledge : global.walletConfig.min_committee_member_pledge;
+        let pledge_object = e.target.getAttribute('data-ctrl');
+        let {pledge_type, title, total_pledge, min_pledge} = {};
+        let is_witness = false;
+        switch(pledge_object){
+            case 'witness':
+                pledge_type = 'witness_update';
+                title = this.translate("balance.witness_pledge");
+                total_pledge = balance.total_witness_pledge;
+                min_pledge = global.walletConfig.min_witness_pledge;
+                break;
+            case 'committee':
+                pledge_type = 'committee_member_update';
+                title = this.translate("balance.committee_member_pledge");
+                total_pledge = balance.total_committee_member_pledge;
+                min_pledge = global.walletConfig.min_committee_member_pledge;
+                break;
+            case 'lock':
+                pledge_type = 'balance_lock_update';
+                title = this.translate("balance.lock_title");
+                total_pledge = balance.locked_balance;
+                min_pledge = global.walletConfig.min_lock_balance;
+                break;
+            case 'mining':
+                pledge_type = 'pledge_mining_update';
+                title = this.translate("balance.witness_pledge");
+                total_pledge = balance.total_witness_pledge;
+                min_pledge = global.walletConfig.min_mining_pledge;
+                break;    
+        }
         BalanceActions.getPledgeFees(pledge_type);
-        BalanceActions.openPledge(is_witness, title, pledge, pledge_type, min_pledge);
+        BalanceActions.openPledge(title, total_pledge, pledge_type, min_pledge);
     }
 
     /**
@@ -199,6 +223,25 @@ class BalanceContainer extends BaseComponent {
                         <td>{Utils.formatAmount(available_csaf_collect * global.walletConfig.csaf_param, 4)}（<a className="font-btn m-t-0 hover-hand" onClick={this.onCollectCsaf.bind(this)}>{this.translate("balance.click_collect")}</a>）</td>
                     </tr>
                     </tbody>
+                </table>
+                <table className="content-table" cellSpacing="0">
+                        <thead className="balance-title" >
+                            <tr><td colSpan={3}>{this.translate("balance.lock_title")}</td></tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th width={200}>{this.translate("balance.locked_balance")}</th>
+                                <th>{this.translate("balance.releasing_locked_balance")}</th>
+                                <th width={260}>{this.translate("balance.assets_operation")}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{balance.locked_balance}</td>
+                                <td>{balance.releasing_locked_balance}</td>
+                                <td><input type="button" value={this.translate("balance.change_locked_balance")} className="button" data-ctrl="lock" onClick={this.onChangePledge.bind(this)} /></td>
+                            </tr>
+                        </tbody>
                 </table>
                 {
                     balance.is_pledge ? 

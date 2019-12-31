@@ -205,7 +205,18 @@
     "error_invalid_witness":"Invalid Witness",
     "error_invalid_committee":"Invalid Committee Member",
     "error_update_pledge":"Update Pledge Error",
-    "alert_min_pledge": "Min Pledge %(amount)s %(unit)s"
+    "alert_min_pledge": "Min Pledge %(amount)s %(unit)s",
+    "lock_title": "Lock",
+    "locked_balance": "Locked Amount",
+    "releasing_locked_balance": "Releasing Amount",
+    "change_locked_balance": "Update Amount",
+    "error_invalid_lock_account": "Invalid Account",
+    "current_locked_balance": "Current Locked Balance",
+    "max_locked_balance": "Max Locked Balance",
+    "min_locked_balance": "Min Locked Balance",
+    "alert_min_locked_balance": "Min Locked Balance %(amount)s %(unit)s",
+    "update_locked_balance": "Update Locked Balance",
+    "place_locked_balance_amount": "Please Input Locked Balance Amount"
   },
   "transfer": {
     "title": "Transfer",

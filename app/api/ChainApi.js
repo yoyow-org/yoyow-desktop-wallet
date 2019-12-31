@@ -81,7 +81,7 @@ export default {
         if (start != 0) {
             start -= 1;
         }
-        return ChainStore.fetchRelativeAccountHistory(uid, op_type, stop, limit, start).then(res => {
+        return ChainStore.fetchRelativeAccountHistory(uid, op_type, start, limit, stop).then(res => {
             let history = [];
             for (let o of res) {
                 let op = o[1]['op'][1];
@@ -129,9 +129,9 @@ export default {
                 let {params, dynamicParams} = res[1];
                 // 币天/积分积累
                 // 余额（加上借入的，减去借出的）
-                let effective_balance = Long.fromValue(statistics.core_balance).add(Long.fromValue(statistics.core_leased_in)).sub(Long.fromValue(statistics.core_leased_out));
+                //let effective_balance = Long.fromValue(statistics.core_balance).add(Long.fromValue(statistics.core_leased_in)).sub(Long.fromValue(statistics.core_leased_out));
                 // * 一天秒数 / 币龄抵扣手续费比率（csaf_rate）
-                let csaf_accumulate = effective_balance * 86400 / params.csaf_rate * global.walletConfig.csaf_param;
+                let csaf_accumulate = Long.fromValue(statistics.locked_balance) * 86400 / params.csaf_rate * global.walletConfig.csaf_param;
                 // 币天/积分 可领取
                 let csaf_collect = Math.floor(Utils.calcCoinSecondsEarned(statistics, params.csaf_accumulate_window, dynamicParams.time).new_coin_seconds_earned / params.csaf_rate * global.walletConfig.csaf_param);
                 let assets = {
@@ -140,7 +140,10 @@ export default {
                         .sub(statistics.total_witness_pledge)
                         .sub(statistics.total_committee_member_pledge)
                         .sub(statistics.total_platform_pledge)
-                        .toNumber()), // 实际余额 - 见证人抵押 - 理事会抵押 - 平台抵押
+                        .sub(statistics.total_mining_pledge)
+                        .sub(statistics.locked_balance)
+                        .sub(statistics.releasing_locked_balance)
+                        .toNumber()), // 实际余额 - 见证人抵押 - 理事会抵押 - 平台抵押 - 挖矿抵押 - 锁仓 - 释放中锁仓
                     prepaid_balance: this.realCount(statistics.prepaid), // 零钱
                     csaf_balance: this.realCount(statistics.csaf), // 币天/积分
                     max_csaf_limit: this.realCount(params.max_csaf_per_account), // 币天/积分上限
@@ -152,7 +155,9 @@ export default {
                     releasing_committee_member_pledge: this.realCount(statistics.releasing_committee_member_pledge), // 理事会抵押待退
                     is_pledge: statistics.total_witness_pledge > 0 || statistics.total_committee_member_pledge > 0, // 以是否有抵押判断时候见证人或理事会成员
                     is_witness: statistics.total_witness_pledge > 0, // 是否有见证人抵押
-                    is_committee: statistics.total_committee_member_pledge > 0 // 是否有理事会抵押
+                    is_committee: statistics.total_committee_member_pledge > 0, // 是否有理事会抵押
+                    locked_balance: this.realCount(statistics.locked_balance), //锁仓金额
+                    releasing_locked_balance: this.realCount(statistics.releasing_locked_balance)
                 };
                 return assets;
 
@@ -320,13 +325,32 @@ export default {
     /**
      * 构建获取
      */
-    buildPledgeData(amount = 0){
+    buildPledgeData(pledge_type, pledge_params = {amount: 0}){
         return new Promise((resolve, reject) => {
-            let curWallet = WalletStore.getWallet();
-            let op_data = {
-                account: curWallet.yoyow_id,
-                new_pledge: {amount: Math.round(amount * global.walletConfig.retain_count), asset_id: 0}
-            };
+            let cur_wallet = WalletStore.getWallet();
+            let cur_yoyow_id = cur_wallet.yoyow_id;
+            let op_data = {};
+            switch(pledge_type){
+                case "balance_lock_update":
+                    op_data = {
+                        account: cur_yoyow_id,
+                        new_lock_balance: Math.round(pledge_params.amount * global.walletConfig.retain_count)
+                    };
+                    break;
+                case "pledge_mining_update":
+                    op_data = {
+                        pledge_account: cur_yoyow_id,
+                        witness: pledge_params.witness,
+                        new_pledge: Math.round(pledge_params.amount * global.walletConfig.retain_count)
+                    };
+                    break;
+                default:
+                    op_data = {
+                        account: cur_yoyow_id,
+                        new_pledge: {amount: Math.round(pledge_params.amount * global.walletConfig.retain_count), asset_id: 0}
+                    };
+                    break;
+            }
             resolve(op_data);
         });
     },
@@ -357,7 +381,7 @@ export default {
      * 获取抵押手续费
      */
     getPledgeFees(pledge_type){
-        return this.buildPledgeData().then(op_data => {
+        return this.buildPledgeData(pledge_type).then(op_data => {
             return this.getOperationsFees(pledge_type, op_data, op_data.account);
         });
     },
@@ -365,13 +389,13 @@ export default {
     /**
      * 处理抵押操作
      * @param amount 新的抵押金额
-     * @param pledge_type 抵押操作类型 见证人/理事会
+     * @param pledge_type 抵押操作类型 见证人/理事会/锁仓/抵押挖矿
      */
-    processUpdatePledge(amount, pledge_type, use_csaf){
+    processUpdatePledge(pledge_params, pledge_type, use_csaf){
         return new Promise((resolve, reject) => {
             let curWallet = WalletStore.getWallet();
             
-            this.buildPledgeData(amount).then(op_data => {
+            this.buildPledgeData(pledge_type, pledge_params).then(op_data => {
                 let key = WalletStore.decryptTcomb_PrivateKey(curWallet.encrypted_active);
                 this.__processTransaction(pledge_type, op_data, op_data.account, true, use_csaf, key, true).then(() => {
                     resolve();

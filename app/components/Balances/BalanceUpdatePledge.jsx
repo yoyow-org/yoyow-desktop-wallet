@@ -40,13 +40,14 @@ class BalanceUpdatePledge extends BaseComponent{
 
     confirm(){
         let {amount, useCsaf} = this.state;
-        let {balance, pledge, min_pledge, fees} = this.props;
+        let {balance, pledge, pledge_type, min_pledge, fees} = this.props;
         let max_pledge = pledge + balance.core_balance;
         max_pledge = Utils.formatAmount(max_pledge);
         let require_amount = parseFloat(amount) + Utils.formatAmount(useCsaf ? fees.with_csaf_fees : fees.min_fees);
         require_amount = Utils.formatAmount(require_amount);
         if(amount < min_pledge){
-            ConfirmActions.alert(this.translate("balance.alert_min_pledge",{amount: min_pledge, unit: global.walletConfig.coin_unit}));
+            ConfirmActions.alert(pledge_type == 'balance_lock_update' ? this.translate("balance.alert_min_pledge",{amount: min_pledge, unit: global.walletConfig.coin_unit})
+                                                : this.translate("balance.alert_min_pledge",{amount: min_pledge, unit: global.walletConfig.coin_unit}));
         }else if(require_amount > max_pledge){
             ConfirmActions.alert(this.translate("balance.alert_balance_not_enough"));
         }else if(!useCsaf && balance.core_balance < fees.min_fees){
@@ -64,14 +65,26 @@ class BalanceUpdatePledge extends BaseComponent{
 
     __confirm(){
         let {amount, useCsaf} = this.state;
-        let {is_witness, master, pledge_type} = this.props;
-        BalanceActions.confirmUpdatePledge(amount, pledge_type, useCsaf).then(res => {
+        let {master, pledge_type} = this.props;
+        BalanceActions.confirmUpdatePledge({amount: amount}, pledge_type, useCsaf).then(res => {
             this.close();
             BalanceActions.getBalance(master);
-            NotificationActions.success((this.translate("balance.change_pledge") + this.translate("balance.success")));
+            NotificationActions.success((( pledge_type == 'balance_lock_update' ? this.translate("balance.change_locked_balance") : this.translate("balance.change_pledge")) + this.translate("balance.success")));
         }).catch(code => {
             if(code == 1){
-                ConfirmActions.error(is_witness ? this.translate("balance.error_invalid_witness") : this.translate("balance.error_invalid_committee"));
+                let error = '';
+                switch(pledge_type){
+                    case 'witness_update' || 'pledge_mining_update':
+                        error = this.translate("balance.error_invalid_witness");
+                        break;
+                    case 'committee_member_update':
+                        error = this.translate("balance.error_invalid_witness");
+                        break;
+                    case 'balance_lock_update':
+                        error = this.translate("balance.error_invalid_lock_account");
+                        break;   
+                }
+                ConfirmActions.error(error);
             }else{
                 ConfirmActions.error(this.translate("balance.error_update_pledge"));
             }
@@ -86,31 +99,32 @@ class BalanceUpdatePledge extends BaseComponent{
     render(){
         let {useCsaf, amount} = this.state;
         let {title, visible, width, height} = this.props.pledgeWindow;
-        let {balance, fees, isShort, loading, pledge, min_pledge} = this.props;
+        let {balance, fees, isShort, loading, pledge, pledge_type, min_pledge} = this.props;
         let max_pledge = pledge + balance.core_balance;
         max_pledge = Utils.formatAmount(max_pledge);
         if(!balance) balance = {};
         if(!fees) feees = {};
-
+        console.log(pledge_type);
+        console.log(this.props);
         return(
             <div className="popup-window">
                 <Modal visible={visible} onClose={this.close.bind(this)} height={height} width={width}>
                     <div className="title">{title}</div>
                     <div className="vh-flex">
                         <div className="edit-line" >
-                            <label className="normal-text w-115">{this.translate("balance.current_pledge_price")}:</label>
+                            <label className="normal-text w-115">{pledge_type == 'balance_lock_update' ? this.translate("balance.current_locked_balance") : this.translate("balance.current_pledge_price")}:</label>
                             <label className="normal-text">{pledge}&nbsp;{global.walletConfig.coin_unit}</label>
                         </div>
                         <div className="edit-line" >
-                            <label className="normal-text w-115">{this.translate("balance.max_pledge_price")}:</label>
+                            <label className="normal-text w-115">{pledge_type == 'balance_lock_update' ? this.translate("balance.max_locked_balance") : this.translate("balance.max_pledge_price")}:</label>
                             <label className="normal-text">{max_pledge}&nbsp;{global.walletConfig.coin_unit}</label>
                         </div>
                         <div className="edit-line" >
-                            <label className="normal-text w-115">{this.translate("balance.min_pledge_price")}:</label>
+                            <label className="normal-text w-115">{pledge_type == 'balance_lock_update' ? this.translate("balance.min_locked_balance") : this.translate("balance.min_pledge_price")}:</label>
                             <label className="normal-text ">{min_pledge}&nbsp;{global.walletConfig.coin_unit}</label>
                         </div>
                         <div className="edit-line">
-                            <label className="normal-text w-115">{this.translate("balance.upadte_pledge_price")}:</label>
+                            <label className="normal-text w-115">{pledge_type == 'balance_lock_update' ? this.translate("balance.update_locked_balance") : this.translate("balance.upadte_pledge_price")}:</label>
                             <input type="text" className="input-460 " placeholder={this.translate("balance.place_holder_pledge_price")} name="amount" value={amount} onChange={this.handleAmountChange.bind(this)}/>
                         </div>
                         <div className="edit-line">
