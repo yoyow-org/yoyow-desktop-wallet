@@ -18,6 +18,8 @@ global.walletConfig = {
     coin_unit: '', // 货币单位
     min_witness_pledge: 0, // 见证人最小抵押
     min_committee_member_pledge: 0, // 理事会成员最小抵押
+    min_lock_balance: 0, // 最小锁仓金额
+    min_mining_pledge: 0, // 最小抵押挖矿金额
     max_prepaid_transfer_limit_for_platform: 1000 //允许平台动用授权用户零钱的最大额度
 };
 

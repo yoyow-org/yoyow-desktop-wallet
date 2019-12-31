@@ -126,8 +126,8 @@ class BalanceActions{
         return title;
     }
 
-    openPledge(is_witness, title, pledge, pledge_type, min_pledge){
-        return {is_witness, title, pledge, pledge_type, min_pledge};
+    openPledge(title, pledge, pledge_type, min_pledge){
+        return {title, pledge, pledge_type, min_pledge};
     }
 
     getMaxCsafLimit(uid){
@@ -137,6 +137,7 @@ class BalanceActions{
                     let balance = res;
                    dispatch({balance, resolve});
                 }).catch(err => {
+                    console.log(err);
                     reject(err);
                 });
             });
@@ -155,11 +156,11 @@ class BalanceActions{
         }
     }
 
-    confirmUpdatePledge(amount, pledge_type, use_csaf){
+    confirmUpdatePledge(pledge_params, pledge_type, use_csaf){
         this.loading(true);
         return dispatch => {
             return new Promise((resolve, reject) => {
-                ChainApi.processUpdatePledge(amount, pledge_type, use_csaf).then(res => {
+                ChainApi.processUpdatePledge(pledge_params, pledge_type, use_csaf).then(res => {
                     this.loading(false);
                     dispatch(resolve);
                 }).catch(err => {

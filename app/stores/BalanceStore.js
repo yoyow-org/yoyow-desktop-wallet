@@ -96,9 +96,9 @@ class BalanceStore extends BaseStore{
         this.setState({collectWindow: dialogProps});
     }
 
-    onOpenPledge({is_witness, title, pledge, pledge_type, min_pledge}){
+    onOpenPledge({title, pledge, pledge_type, min_pledge}){
         let dialogProps = this.__initPupWindow(false, true, title);
-        this.setState({is_witness: is_witness, pledgeWindow: dialogProps, pledge: pledge, pledge_type: pledge_type, min_pledge: min_pledge});
+        this.setState({pledgeWindow: dialogProps, pledge: pledge, pledge_type: pledge_type, min_pledge: min_pledge});
     }
 
     onCloseDialog(windowName){

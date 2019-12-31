@@ -205,7 +205,18 @@
     "error_invalid_witness": "无效的见证人",
     "error_invalid_committee": "无效的理事会成员",
     "error_update_pledge": "调整抵押失败",
-    "alert_min_pledge": "最低抵押金额 %(amount)s %(unit)s"
+    "alert_min_pledge": "最低抵押金额 %(amount)s %(unit)s",
+    "lock_title": "锁仓",
+    "locked_balance": "锁仓金额",
+    "releasing_locked_balance": "待释放金额",
+    "change_locked_balance": "调整锁仓金额",
+    "error_invalid_lock_account": "无效锁仓帐号",
+    "current_locked_balance": "当前锁仓金额",
+    "max_locked_balance": "最大锁仓金额",
+    "min_locked_balance": "最低锁仓金额",
+    "alert_min_locked_balance": "最低锁仓金额 %(amount)s %(unit)s",
+    "update_locked_balance": "更新锁仓金额",
+    "place_locked_balance_amount": "请输入锁仓金额"
   },
   "transfer": {
     "title": "转账",
