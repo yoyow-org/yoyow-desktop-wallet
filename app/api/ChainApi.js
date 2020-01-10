@@ -876,7 +876,7 @@ export default {
                 let hasAuth = false;
                 if(authObj.length >= 1 && authObj[0] != null){
                     let authInfo = authObj[0];
-                    if( authInfo.permission_flags == permission_flags && 
+                    if(authInfo.platform == pid && authInfo.permission_flags == permission_flags && 
                         authInfo.max_limit == max_limit && authInfo.is_active == true ){
                         hasAuth = true;
                     }
