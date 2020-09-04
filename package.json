@@ -25,7 +25,7 @@
     "html-webpack-plugin": "^2.30.1",
     "json-loader": "^0.5.4",
     "jsx-loader": "^0.13.2",
-    "node-sass": "~4.0.0",
+    "node-sass": "~4.14.1",
     "postcss-loader": "^1.2.2",
     "remarkable-loader": "^0.2.1",
     "sass-loader": "^4.0.2",
